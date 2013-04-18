@@ -1,0 +1,383 @@
+This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2011.7.29)  15 AUG 2011 16:46
+entering extended mode
+**mario.tex
+
+("C:\DiegoWork\Congresos\CIG 2011\Mario CIG 2011\Doc\CIG 2011\cameraReady\mario
+.tex"
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
+vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
+an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
+romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
+sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
+senglishmax, welsh, loaded.
+
+("C:\DiegoWork\Congresos\CIG 2011\Mario CIG 2011\Doc\CIG 2011\cameraReady\IEEEt
+ran.cls"
+Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 366.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen104
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen105
+\CLASSINFOnormalsizeunitybaselineskip=\dimen106
+\IEEEnormaljot=\dimen107
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 724.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 724.
+\IEEEilabelindentA=\dimen108
+\IEEEilabelindentB=\dimen109
+\IEEEilabelindent=\dimen110
+\IEEEelabelindent=\dimen111
+\IEEEdlabelindent=\dimen112
+\IEEElabelindent=\dimen113
+\IEEEiednormlabelsep=\dimen114
+\IEEEiedmathlabelsep=\dimen115
+\IEEEiedtopsep=\skip41
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@IEEEsubequation=\count85
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count86
+\c@table=\count87
+\@IEEEeqnnumcols=\count88
+\@IEEEeqncolcnt=\count89
+\@IEEEtmpitemindent=\dimen116
+\c@IEEEbiography=\count90
+\@IEEEtranrubishbin=\box26
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2010/09/14 v0.05b Graphics/color for pdfTeX
+\Gread@gobject=\count91
+))
+\Gin@req@height=\dimen117
+\Gin@req@width=\dimen118
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\times.sty"
+Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip44
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen119
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen120
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count92
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count93
+\leftroot@=\count94
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count95
+\DOTSCASE@=\count96
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen121
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count97
+\c@MaxMatrixCols=\count98
+\dotsspace@=\muskip10
+\c@parentequation=\count99
+\dspbrk@lvl=\count100
+\tag@help=\toks17
+\row@=\count101
+\column@=\count102
+\maxfields@=\count103
+\andhelp@=\toks18
+\eqnshift@=\dimen122
+\alignsep@=\dimen123
+\tagshift@=\dimen124
+\tagwidth@=\dimen125
+\totwidth@=\dimen126
+\lineht@=\dimen127
+\@envbody=\toks19
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+** ATTENTION: Overriding command lockouts (line 9).
+
+("C:\DiegoWork\Congresos\CIG 2011\Mario CIG 2011\Doc\CIG 2011\cameraReady\mario
+.aux")
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count104
+\scratchdimen=\dimen128
+\scratchbox=\box29
+\nofMPsegments=\count105
+\nofMParguments=\count106
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count107
+\MPscratchDim=\dimen129
+\MPnumerator=\count108
+\everyMPtoPDFconversion=\toks22
+)
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 27.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
+[][][]\OT1/ptm/m/n/8 Diego Perez is an in-de-pen-dent au-thor, email:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
+\OT1/pcr/m/n/8 Diego.Perez.Liebana@gmail.com\OT1/ptm/m/n/8 ; Miguel Nico-lau, M
+ichael
+ []
+
+
+Underfull \hbox (badness 5008) in paragraph at lines 27--27
+\OT1/ptm/m/n/8 O'Neill and An-thony Brabazon are with the Nat-u-ral Com-put-ing
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
+\OT1/ptm/m/n/8 email \OT1/pcr/m/n/8 Miguel.Nicolau@ucd.ie\OT1/ptm/m/n/8 , \OT1/
+pcr/m/n/8 Michael.ONeill@ucd.ie\OT1/ptm/m/n/8 ,
+ []
+
+[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+
+]
+<images/trapMatrix.png, id=10, 482.55281pt x 182.18062pt>
+File: images/trapMatrix.png Graphic file (type png)
+
+<use images/trapMatrix.png> [2 <C:/DiegoWork/Congresos/CIG 2011/Mario CIG 2011/
+Doc/CIG 2011/cameraReady/images/trapMatrix.png>]
+<images/trap.png, id=17, 482.55281pt x 179.92218pt>
+File: images/trap.png Graphic file (type png)
+ <use images/trap.png>
+<images/trapOnlyMap.png, id=18, 301.8778pt x 122.70844pt>
+File: images/trapOnlyMap.png Graphic file (type png)
+
+<use images/trapOnlyMap.png>
+<images/trapNodes.png, id=19, 301.125pt x 121.20282pt>
+File: images/trapNodes.png Graphic file (type png)
+
+<use images/trapNodes.png> [3 <C:/DiegoWork/Congresos/CIG 2011/Mario CIG 2011/D
+oc/CIG 2011/cameraReady/images/trap.png (PNG copy)> <C:/DiegoWork/Congresos/CIG
+ 2011/Mario CIG 2011/Doc/CIG 2011/cameraReady/images/trapOnlyMap.png (PNG copy)
+> <C:/DiegoWork/Congresos/CIG 2011/Mario CIG 2011/Doc/CIG 2011/cameraReady/imag
+es/trapNodes.png>] <images/trapMapNoted.png, id=27, 301.8778pt x 119.69719pt>
+File: images/trapMapNoted.png Graphic file (type png)
+
+<use images/trapMapNoted.png> [4 <C:/DiegoWork/Congresos/CIG 2011/Mario CIG 201
+1/Doc/CIG 2011/cameraReady/images/trapMapNoted.png>]
+Overfull \hbox (11.88367pt too wide) in paragraph at lines 703--703
+[]\OT1/pcr/m/n/10 <Condition> ::= if(obstacleAhead) <Action>;[] 
+ []
+
+
+Underfull \hbox (badness 1371) in paragraph at lines 720--725
+$\OT1/cmr/m/n/10 1$\OT1/ptm/m/n/10 , and through $\OT1/cmr/m/n/10 6%5 = 1$ \OT1
+/ptm/m/n/10 it be-comes \OT1/pcr/m/n/10 moveRight;
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 770--772
+[]\OT1/ptm/m/n/10 The root node con-sists of a se-lec-tor
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 770--772
+\OT1/ptm/m/n/10 (\OT1/pcr/m/n/10 rootSelector\OT1/ptm/m/n/10 ), with a vari-abl
+e num-ber of
+ []
+
+[5]
+Underfull \hbox (badness 2134) in paragraph at lines 775--778
+[]\OT1/ptm/m/n/10 A last (un-con-di-tioned) \OT1/pcr/m/n/10 BehaviourBlock\OT1/
+ptm/m/n/10 , called
+ []
+
+<images/defaultTreeImg.png, id=36, 3360.555pt x 1144.0341pt>
+File: images/defaultTreeImg.png Graphic file (type png)
+
+<use images/defaultTreeImg.png>
+<images/lastButOne2.pdf, id=37, 3344.69104pt x 1465.67093pt>
+File: images/lastButOne2.pdf Graphic file (type pdf)
+
+<use images/lastButOne2.pdf>
+Underfull \hbox (badness 10000) in paragraph at lines 860--873
+[]\OT1/ptm/m/n/10 With the syn-tax de-scribed above, each
+ []
+
+
+Underfull \hbox (badness 1424) in paragraph at lines 860--873
+\OT1/pcr/m/n/10 BehaviourBlock \OT1/ptm/m/n/10 be-comes a self-contained struc-
+ture,
+ []
+
+
+Underfull \hbox (badness 1831) in paragraph at lines 860--873
+\OT1/ptm/m/n/10 and it makes sense to al-low in-di-vid-u-als to ex-change
+ []
+
+[6 <C:/DiegoWork/Congresos/CIG 2011/Mario CIG 2011/Doc/CIG 2011/cameraReady/ima
+ges/defaultTreeImg.png (PNG copy)> <C:/DiegoWork/Congresos/CIG 2011/Mario CIG 2
+011/Doc/CIG 2011/cameraReady/images/lastButOne2.pdf>]
+<images/mbi.pdf, id=49, 614.295pt x 794.97pt>
+File: images/mbi.pdf Graphic file (type pdf)
+ <use images/mbi.pdf>
+<images/mbg.pdf, id=50, 614.295pt x 794.97pt>
+File: images/mbg.pdf Graphic file (type pdf)
+ <use images/mbg.pdf> [7 <C:/DiegoWork/Congresos/CIG 2011/Mario CIG 2011/Doc/CI
+G 2011/cameraReady/images/mbi.pdf> <C:/DiegoWork/Congresos/CIG 2011/Mario CIG 2
+011/Doc/CIG 2011/cameraReady/images/mbg.pdf>]
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ì in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ú in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ù in font ptmr7t!
+
+
+** Conference Paper **
+Before submitting the final camera ready copy, remember to:
+
+ 1. Manually equalize the lengths of two columns on the last page
+ of your paper;
+
+ 2. Ensure that any PostScript and/or PDF output post-processing
+ uses only Type 1 fonts and that every step in the generation
+ process uses the appropriate paper size.
+
+[8]
+("C:\DiegoWork\Congresos\CIG 2011\Mario CIG 2011\Doc\CIG 2011\cameraReady\mario
+.aux") ) 
+Here is how much of TeX's memory you used:
+ 2388 strings out of 494019
+ 35056 string characters out of 3143882
+ 98344 words of memory out of 3000000
+ 5676 multiletter control sequences out of 15000+200000
+ 39624 words of font info for 79 fonts, out of 3000000 for 9000
+ 718 hyphenation exceptions out of 8191
+ 27i,8n,20p,460b,291s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files (x8
+6)/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
+type1/urw/times/utmbi8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/
+times/utmr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri
+8a.pfb>
+Output written on mario.pdf (8 pages, 531947 bytes).
+PDF statistics:
+ 327 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+

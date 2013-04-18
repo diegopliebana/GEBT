@@ -1,0 +1,16 @@
+set terminal postscript enhanced color landscape
+set output "mba.ps"
+set title "Mean Best Generalisation Score"
+set xlabel "Evaluations"
+set ylabel "Fitness"
+set style line 1 lc 1 lt 1
+set style line 2 lc 2 lt 1
+set style line 3 lc 3 lt 1
+set style line 4 lc 0 lt 2
+plot [:125000][] "RUN1/STATS/marioxp-run1-GENERALISATION_statify.dat" u ($1*10*500):2 w linespoints t "Run1" ls 1,\
+"" u ($1*10*500):(50874.8239698 + -0.00120739497019 * $1 * 10 * 500) w l ls 4 t "",\
+"RUN5/STATS/marioxp-run5-GENERALISATION_statify.dat" u ($1*5*2*500):2 w linespoints t "Run5" ls 2,\
+"" u ($1*10*500):(51929.7660154 + 0.000728058544231 * $1 * 10 * 500) w l ls 4 t "",\
+"CHANGE1/STATS/marioxp-change1-GENERALISATION_statify.dat" u ($1*2*5*500):2 w linespoints t "Change1" ls 3,\
+"" u ($1*10*500):(52137.1396842 + 0.00415977512404 * $1 * 10 * 500) w l ls 4 t ""
+

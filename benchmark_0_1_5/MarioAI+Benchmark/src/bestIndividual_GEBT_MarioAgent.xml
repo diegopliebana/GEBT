@@ -1,0 +1,1234 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <Behavior>
+ <Node Name="GE_BT3" Type="Root" >
+ <Node Type="Selector" Name="rootSelector" >
+ <Connector Identifier="GenericChildren">
+  <Node Type="Sequence" Name="BehaviourBlock" >
+ <Connector Identifier="GenericChildren">
+ <Node Name="IsJumpPlatformUpAhead" Type="Condition" />
+ <Node Name="AvailableJumpAhead" Type="Condition" />
+ <Node Type="Sequence" Name="mySequence" >
+ <Connector Identifier="GenericChildren">
+ <Node Name="Down" Type="Action" />
+ <Node Name="Speed" Type="Action" />
+ 	<Node Name="JumpRightLong" Type="Sequence" Node_id="93" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="94" />
+			<Node Filter_Type="Loop" Name="Loop_Make_Jump" Times="9" Type="Filter" Node_id="95" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpRight" Operation="JumpRight" Type="Action" Node_id="96" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ <Node Name="Fire" Type="Action" />
+ <Node Name="WalkLeft" Type="Action" />
+ <Node Name="Fire" Type="Action" />
+ 	<Node Name="GoUnderRight" Type="Sequence" Node_id="659" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="IsStuck" Operation="IsStuck" Type="Condition" Node_id="722" />
+			<Node Name="ObstacleHead" Operation="ObstacleHead" Type="Condition" Node_id="723" />
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="660" />
+			<Node Filter_Type="Loop" Name="Loop_GoingBack" Times="10" Type="Filter" Node_id="661" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="RunSequence" Type="Sequence" Node_id="662" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="RunLeftSafe" Type="Selector" Node_id="663" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="Hole" Type="Sequence" Node_id="664" >
+										<Connector Identifier="GenericChildren">
+											<Node Name="HoleBack" Operation="HoleBack" Type="Condition" Node_id="665" />
+											<Node Name="JumpLeftRunLong" Type="Sequence" Node_id="666" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="NOP" Operation="NOP" Type="Action" Node_id="667" />
+													<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="668" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="JumpLeftRun" Operation="JumpLeftRun" Type="Action" Node_id="669" />
+														</Connector>
+													</Node>
+												</Connector>
+											</Node>
+										</Connector>
+									</Node>
+									<Node Name="Obstacle" Type="Sequence" Node_id="670" >
+										<Connector Identifier="GenericChildren">
+											<Node Name="ObstacleBack" Operation="ObstacleBack" Type="Condition" Node_id="671" />
+											<Node Name="JumpLeftRunLong" Type="Sequence" Node_id="672" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="NOP" Operation="NOP" Type="Action" Node_id="673" />
+													<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="674" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="JumpLeftRun" Operation="JumpLeftRun" Type="Action" Node_id="675" />
+														</Connector>
+													</Node>
+												</Connector>
+											</Node>
+										</Connector>
+									</Node>
+									<Node Name="jumpableEnemy" Type="Sequence" Node_id="676" >
+										<Connector Identifier="GenericChildren">
+											<Node Name="JumpableEnemyBack" Operation="JumpableEnemyBack" Type="Condition" Node_id="677" />
+											<Node Name="JumpLeftShort" Type="Sequence" Node_id="678" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="NOP" Operation="NOP" Type="Action" Node_id="679" />
+													<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="680" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="JumpLeft" Operation="JumpLeft" Type="Action" Node_id="681" />
+														</Connector>
+													</Node>
+												</Connector>
+											</Node>
+										</Connector>
+									</Node>
+									<Node Name="noJumpableEnemy" Type="Sequence" Node_id="682" >
+										<Connector Identifier="GenericChildren">
+											<Node Name="NoJumpableEnemyBack" Operation="NoJumpableEnemyBack" Type="Condition" Node_id="683" />
+											<Node Name="JumpLeftRunLong" Type="Sequence" Node_id="684" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="NOP" Operation="NOP" Type="Action" Node_id="685" />
+													<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="686" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="JumpLeftRun" Operation="JumpLeftRun" Type="Action" Node_id="687" />
+														</Connector>
+													</Node>
+												</Connector>
+											</Node>
+										</Connector>
+									</Node>
+									<Node Name="RunLeft" Operation="RunLeft" Type="Action" Node_id="688" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Filter_Type="Non" Name="Loop_GoingForward" Type="Filter" Node_id="689" >
+				<Connector Identifier="GenericChildren">
+					<Node Filter_Type="Until_Fails_Limited" Name="UFL" Times="50" Type="Filter" Node_id="690" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="GoingForward" Type="Sequence" Node_id="691" >
+								<Connector Identifier="GenericChildren">
+									<Node Filter_Type="Non" Name="Non" Type="Filter" Node_id="692" >
+										<Connector Identifier="GenericChildren">
+											<Node Name="ObstacleHead" Operation="ObstacleHead" Type="Condition" Node_id="693" />
+										</Connector>
+									</Node>
+									<Node Name="RunRightSafe" Type="Selector" Node_id="694" >
+										<Connector Identifier="GenericChildren">
+											<Node Name="Hole" Type="Sequence" Node_id="695" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="HoleAhead" Operation="HoleAhead" Type="Condition" Node_id="696" />
+													<Node Name="JumpRightRunLong" Type="Sequence" Node_id="697" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="NOP" Operation="NOP" Type="Action" Node_id="698" />
+															<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="699" >
+																<Connector Identifier="GenericChildren">
+																	<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="700" />
+																</Connector>
+															</Node>
+														</Connector>
+													</Node>
+												</Connector>
+											</Node>
+											<Node Name="Obstacle" Type="Sequence" Node_id="701" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="ObstacleAhead" Operation="ObstacleAhead" Type="Condition" Node_id="702" />
+													<Node Name="JumpRightRunLong" Type="Sequence" Node_id="703" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="NOP" Operation="NOP" Type="Action" Node_id="704" />
+															<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="705" >
+																<Connector Identifier="GenericChildren">
+																	<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="706" />
+																</Connector>
+															</Node>
+														</Connector>
+													</Node>
+												</Connector>
+											</Node>
+											<Node Name="jumpableEnemy" Type="Sequence" Node_id="707" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="JumpableEnemyAhead" Operation="JumpableEnemyAhead" Type="Condition" Node_id="708" />
+													<Node Name="JumpRightShort" Type="Sequence" Node_id="709" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="NOP" Operation="NOP" Type="Action" Node_id="710" />
+															<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="711" >
+																<Connector Identifier="GenericChildren">
+																	<Node Name="JumpRight" Operation="JumpRight" Type="Action" Node_id="712" />
+																</Connector>
+															</Node>
+														</Connector>
+													</Node>
+												</Connector>
+											</Node>
+											<Node Name="noJumpableEnemy" Type="Sequence" Node_id="713" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="NoJumpableEnemyAhead" Operation="NoJumpableEnemyAhead" Type="Condition" Node_id="714" />
+													<Node Name="JumpRightRunLong" Type="Sequence" Node_id="715" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="NOP" Operation="NOP" Type="Action" Node_id="716" />
+															<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="717" >
+																<Connector Identifier="GenericChildren">
+																	<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="718" />
+																</Connector>
+															</Node>
+														</Connector>
+													</Node>
+												</Connector>
+											</Node>
+											<Node Name="RunRight" Operation="RunRight" Type="Action" Node_id="719" />
+										</Connector>
+									</Node>
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Filter_Type="Loop" Name="Loop_GoingUnder" Times="5" Type="Filter" Node_id="720" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="Down" Operation="Down" Type="Action" Node_id="721" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ 	<Node Name="WalkRightSafe" Type="Selector" Node_id="360" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="Hole" Type="Sequence" Node_id="361" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="HoleAhead" Operation="HoleAhead" Type="Condition" Node_id="362" />
+					<Node Name="JumpRightRunLong" Type="Sequence" Node_id="363" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="364" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="365" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="366" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="Obstacle" Type="Sequence" Node_id="367" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="ObstacleAhead" Operation="ObstacleAhead" Type="Condition" Node_id="368" />
+					<Node Name="JumpRightRunLong" Type="Sequence" Node_id="369" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="370" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="371" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="372" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="jumpableEnemy" Type="Sequence" Node_id="373" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpableEnemyAhead" Operation="JumpableEnemyAhead" Type="Condition" Node_id="374" />
+					<Node Name="JumpRightShort" Type="Sequence" Node_id="375" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="376" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="377" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpRight" Operation="JumpRight" Type="Action" Node_id="378" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="noJumpableEnemy" Type="Sequence" Node_id="379" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="NoJumpableEnemyAhead" Operation="NoJumpableEnemyAhead" Type="Condition" Node_id="380" />
+					<Node Name="JumpRightRunLong" Type="Sequence" Node_id="381" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="382" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="383" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="384" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="WalkRight" Operation="WalkRight" Type="Action" Node_id="385" />
+		</Connector>
+	</Node>
+ <Node Name="NOP" Type="Action" />
+ <Node Name="WalkLeft" Type="Action" />
+ <Node Name="Speed" Type="Action" />
+ 	<Node Name="Avoid_Left_Trap" Type="Sequence" Node_id="64" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="IsALeftTrap" Operation="IsALeftTrap" Type="Condition" Node_id="65" />
+			<Node Filter_Type="Until_Fails" Name="GetOutOfHere" Type="Filter" Node_id="66" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="WhatToDo" Type="Selector" Node_id="67" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="DetectGap" Type="Selector" Node_id="68" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="GoALot" Type="Sequence" Node_id="69" >
+										<Connector Identifier="GenericChildren">
+											<Node Filter_Type="Non" Name="Non" Type="Filter" Node_id="70" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="CanIStopRunning" Operation="CanIStopRunning" Type="Sequence" Node_id="71" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="IsTrapLeftEnded" Operation="IsTrapLeftEnded" Type="Condition" Node_id="72" />
+															<Node Name="IsGapOnLeft" Operation="IsGapOnLeft" Type="Condition" Node_id="73" />
+														</Connector>
+													</Node>
+												</Connector>
+											</Node>
+											<Node Filter_Type="Non" Name="NON" Type="Filter" Node_id="74" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="IsStuck" Operation="IsStuck" Type="Condition" Node_id="75" />
+												</Connector>
+											</Node>
+											<Node Name="RunRightSafe" Type="Selector" Node_id="76" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="Hole" Type="Sequence" Node_id="77" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="HoleAhead" Operation="HoleAhead" Type="Condition" Node_id="78" />
+															<Node Name="JumpRightRunLong" Type="Sequence" Node_id="79" >
+																<Connector Identifier="GenericChildren">
+																	<Node Name="NOP" Operation="NOP" Type="Action" Node_id="80" />
+																	<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="81" >
+																		<Connector Identifier="GenericChildren">
+																			<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="82" />
+																		</Connector>
+																	</Node>
+																</Connector>
+															</Node>
+														</Connector>
+													</Node>
+													<Node Name="Obstacle" Type="Sequence" Node_id="83" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="ObstacleAhead" Operation="ObstacleAhead" Type="Condition" Node_id="84" />
+															<Node Name="JumpRightRunLong" Type="Sequence" Node_id="85" >
+																<Connector Identifier="GenericChildren">
+																	<Node Name="NOP" Operation="NOP" Type="Action" Node_id="86" />
+																	<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="87" >
+																		<Connector Identifier="GenericChildren">
+																			<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="88" />
+																		</Connector>
+																	</Node>
+																</Connector>
+															</Node>
+														</Connector>
+													</Node>
+													<Node Name="jumpableEnemy" Type="Sequence" Node_id="89" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="JumpableEnemyAhead" Operation="JumpableEnemyAhead" Type="Condition" Node_id="90" />
+															<Node Name="JumpRightShort" Type="Sequence" Node_id="91" >
+																<Connector Identifier="GenericChildren">
+																	<Node Name="NOP" Operation="NOP" Type="Action" Node_id="92" />
+																	<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="93" >
+																		<Connector Identifier="GenericChildren">
+																			<Node Name="JumpRight" Operation="JumpRight" Type="Action" Node_id="94" />
+																		</Connector>
+																	</Node>
+																</Connector>
+															</Node>
+														</Connector>
+													</Node>
+													<Node Name="noJumpableEnemy" Type="Sequence" Node_id="95" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="NoJumpableEnemyAhead" Operation="NoJumpableEnemyAhead" Type="Condition" Node_id="96" />
+															<Node Name="JumpRightRunLong" Type="Sequence" Node_id="97" >
+																<Connector Identifier="GenericChildren">
+																	<Node Name="NOP" Operation="NOP" Type="Action" Node_id="98" />
+																	<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="99" >
+																		<Connector Identifier="GenericChildren">
+																			<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="100" />
+																		</Connector>
+																	</Node>
+																</Connector>
+															</Node>
+														</Connector>
+													</Node>
+													<Node Name="RunRight" Operation="RunRight" Type="Action" Node_id="101" />
+												</Connector>
+											</Node>
+										</Connector>
+									</Node>
+									<Node Name="UseLeftGap" Type="Sequence" Node_id="102" >
+										<Connector Identifier="GenericChildren">
+											<Node Name="GoGapOnLeft" Operation="GoGapOnLeft" Type="Action" Node_id="103" />
+											<Node Name="JumpRightLongModified" Type="Sequence" Node_id="104" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="NOP" Operation="NOP" Type="Action" Node_id="105" />
+													<Node Filter_Type="Loop" Name="Loop_Make_Jump" Times="2" Type="Filter" Node_id="106" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="VerticalJump" Operation="VerticalJump" Type="Action" Node_id="107" />
+														</Connector>
+													</Node>
+													<Node Filter_Type="Loop" Name="Loop_Make_Jump" Times="9" Type="Filter" Node_id="108" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="JumpRight" Operation="JumpRight" Type="Action" Node_id="109" />
+														</Connector>
+													</Node>
+													<Node Name="Failure" Operation="Failure" Type="Condition" Node_id="110" />
+												</Connector>
+											</Node>
+										</Connector>
+									</Node>
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ <Node Name="Speed" Type="Action" />
+ <Node Name="Fire" Type="Action" />
+ 	<Node Name="JumpRightRunLong" Type="Sequence" Node_id="98" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="99" />
+			<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="100" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="101" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ <Node Name="RunRight" Type="Action" />
+ 	<Node Name="VerticalJumpLong" Type="Sequence" Node_id="103" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="104" />
+			<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="105" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="VerticalJump" Operation="VerticalJump" Type="Action" Node_id="106" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ 	<Node Name="JumpRightRunLong" Type="Sequence" Node_id="98" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="99" />
+			<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="100" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="101" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ <Node Name="Down" Type="Action" />
+ <Node Name="NOP" Type="Action" />
+ </Connector>
+</Node>
+ </Connector>
+</Node>
+  <Node Type="Sequence" Name="BehaviourBlock" >
+ <Connector Identifier="GenericChildren">
+ 	<Node Name="Avoid_RightTrap" Type="Sequence" Node_id="16" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="IsARightTrap" Operation="IsARightTrap" Type="Condition" Node_id="17" />
+			<Node Filter_Type="Until_Fails" Name="GetOutOfHere" Type="Filter" Node_id="18" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="WhatToDo" Type="Selector" Node_id="19" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="DetectGap" Type="Selector" Node_id="20" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="GoALot" Type="Sequence" Node_id="21" >
+										<Connector Identifier="GenericChildren">
+											<Node Filter_Type="Non" Name="NON" Type="Filter" Node_id="22" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="CanIStopRunning" Operation="CanIStopRunning" Type="Sequence" Node_id="23" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="IsTrapRightEnded" Operation="IsTrapRightEnded" Type="Condition" Node_id="24" />
+															<Node Name="IsGapOnRight" Operation="IsGapOnRight" Type="Condition" Node_id="25" />
+														</Connector>
+													</Node>
+												</Connector>
+											</Node>
+											<Node Filter_Type="Non" Name="NON" Type="Filter" Node_id="26" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="IsStuck" Operation="IsStuck" Type="Condition" Node_id="27" />
+												</Connector>
+											</Node>
+											<Node Name="RunLeftSafe" Type="Selector" Node_id="28" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="Hole" Type="Sequence" Node_id="29" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="HoleBack" Operation="HoleBack" Type="Condition" Node_id="30" />
+															<Node Name="JumpLeftRunLong" Type="Sequence" Node_id="31" >
+																<Connector Identifier="GenericChildren">
+																	<Node Name="NOP" Operation="NOP" Type="Action" Node_id="32" />
+																	<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="33" >
+																		<Connector Identifier="GenericChildren">
+																			<Node Name="JumpLeftRun" Operation="JumpLeftRun" Type="Action" Node_id="34" />
+																		</Connector>
+																	</Node>
+																</Connector>
+															</Node>
+														</Connector>
+													</Node>
+													<Node Name="Obstacle" Type="Sequence" Node_id="35" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="ObstacleBack" Operation="ObstacleBack" Type="Condition" Node_id="36" />
+															<Node Name="JumpLeftRunLong" Type="Sequence" Node_id="37" >
+																<Connector Identifier="GenericChildren">
+																	<Node Name="NOP" Operation="NOP" Type="Action" Node_id="38" />
+																	<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="39" >
+																		<Connector Identifier="GenericChildren">
+																			<Node Name="JumpLeftRun" Operation="JumpLeftRun" Type="Action" Node_id="40" />
+																		</Connector>
+																	</Node>
+																</Connector>
+															</Node>
+														</Connector>
+													</Node>
+													<Node Name="jumpableEnemy" Type="Sequence" Node_id="41" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="JumpableEnemyBack" Operation="JumpableEnemyBack" Type="Condition" Node_id="42" />
+															<Node Name="JumpLeftShort" Type="Sequence" Node_id="43" >
+																<Connector Identifier="GenericChildren">
+																	<Node Name="NOP" Operation="NOP" Type="Action" Node_id="44" />
+																	<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="45" >
+																		<Connector Identifier="GenericChildren">
+																			<Node Name="JumpLeft" Operation="JumpLeft" Type="Action" Node_id="46" />
+																		</Connector>
+																	</Node>
+																</Connector>
+															</Node>
+														</Connector>
+													</Node>
+													<Node Name="noJumpableEnemy" Type="Sequence" Node_id="47" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="NoJumpableEnemyBack" Operation="NoJumpableEnemyBack" Type="Condition" Node_id="48" />
+															<Node Name="JumpLeftRunLong" Type="Sequence" Node_id="49" >
+																<Connector Identifier="GenericChildren">
+																	<Node Name="NOP" Operation="NOP" Type="Action" Node_id="50" />
+																	<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="51" >
+																		<Connector Identifier="GenericChildren">
+																			<Node Name="JumpLeftRun" Operation="JumpLeftRun" Type="Action" Node_id="52" />
+																		</Connector>
+																	</Node>
+																</Connector>
+															</Node>
+														</Connector>
+													</Node>
+													<Node Name="RunLeft" Operation="RunLeft" Type="Action" Node_id="53" />
+												</Connector>
+											</Node>
+										</Connector>
+									</Node>
+									<Node Name="UseRightGap" Type="Sequence" Node_id="54" >
+										<Connector Identifier="GenericChildren">
+											<Node Name="GoGapOnRight" Operation="GoGapOnRight" Type="Action" Node_id="55" />
+											<Node Name="JumpRightLongModified" Type="Sequence" Node_id="56" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="NOP" Operation="NOP" Type="Action" Node_id="57" />
+													<Node Filter_Type="Loop" Name="Loop_Make_Jump" Times="2" Type="Filter" Node_id="58" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="VerticalJump" Operation="VerticalJump" Type="Action" Node_id="59" />
+														</Connector>
+													</Node>
+													<Node Filter_Type="Loop" Name="Loop_Make_Jump" Times="9" Type="Filter" Node_id="60" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="JumpRight" Operation="JumpRight" Type="Action" Node_id="61" />
+														</Connector>
+													</Node>
+													<Node Name="Failure" Operation="Failure" Type="Condition" Node_id="62" />
+												</Connector>
+											</Node>
+										</Connector>
+									</Node>
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ <Node Filter_Type="Non" Name="non" Type="Filter" >
+ <Connector Identifier="GenericChildren">
+ <Node Type="Sequence" Name="mySequence" >
+ <Connector Identifier="GenericChildren">
+ <Node Name="Speed" Type="Action" />
+ 	<Node Name="JumpRightRunShort" Type="Sequence" Node_id="186" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="187" />
+			<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="191" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="190" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ <Node Name="Down" Type="Action" />
+ 	<Node Name="JumpRightRunLong" Type="Sequence" Node_id="98" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="99" />
+			<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="100" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="101" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ <Node Name="Fire" Type="Action" />
+ 	<Node Name="WalkLeftSafe" Type="Selector" Node_id="251" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="Hole" Type="Sequence" Node_id="252" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="HoleBack" Operation="HoleBack" Type="Condition" Node_id="253" />
+					<Node Name="JumpLeftRunLong" Type="Sequence" Node_id="282" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="283" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="284" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpLeftRun" Operation="JumpLeftRun" Type="Action" Node_id="285" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="Obstacle" Type="Sequence" Node_id="258" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="ObstacleBack" Operation="ObstacleBack" Type="Condition" Node_id="259" />
+					<Node Name="JumpLeftRunLong" Type="Sequence" Node_id="286" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="287" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="288" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpLeftRun" Operation="JumpLeftRun" Type="Action" Node_id="289" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="jumpableEnemy" Type="Sequence" Node_id="264" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpableEnemyBack" Operation="JumpableEnemyBack" Type="Condition" Node_id="265" />
+					<Node Name="JumpLeftShort" Type="Sequence" Node_id="299" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="300" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="301" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpLeft" Operation="JumpLeft" Type="Action" Node_id="302" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="noJumpableEnemy" Type="Sequence" Node_id="270" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="NoJumpableEnemyBack" Operation="NoJumpableEnemyBack" Type="Condition" Node_id="271" />
+					<Node Name="JumpLeftRunLong" Type="Sequence" Node_id="290" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="291" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="292" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpLeftRun" Operation="JumpLeftRun" Type="Action" Node_id="293" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="WalkLeft" Operation="WalkLeft" Type="Action" Node_id="276" />
+		</Connector>
+	</Node>
+ 	<Node Name="WalkRightSafe" Type="Selector" Node_id="360" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="Hole" Type="Sequence" Node_id="361" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="HoleAhead" Operation="HoleAhead" Type="Condition" Node_id="362" />
+					<Node Name="JumpRightRunLong" Type="Sequence" Node_id="363" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="364" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="365" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="366" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="Obstacle" Type="Sequence" Node_id="367" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="ObstacleAhead" Operation="ObstacleAhead" Type="Condition" Node_id="368" />
+					<Node Name="JumpRightRunLong" Type="Sequence" Node_id="369" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="370" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="371" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="372" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="jumpableEnemy" Type="Sequence" Node_id="373" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpableEnemyAhead" Operation="JumpableEnemyAhead" Type="Condition" Node_id="374" />
+					<Node Name="JumpRightShort" Type="Sequence" Node_id="375" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="376" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="377" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpRight" Operation="JumpRight" Type="Action" Node_id="378" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="noJumpableEnemy" Type="Sequence" Node_id="379" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="NoJumpableEnemyAhead" Operation="NoJumpableEnemyAhead" Type="Condition" Node_id="380" />
+					<Node Name="JumpRightRunLong" Type="Sequence" Node_id="381" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="382" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="383" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="384" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="WalkRight" Operation="WalkRight" Type="Action" Node_id="385" />
+		</Connector>
+	</Node>
+ <Node Name="NOP" Type="Action" />
+ <Node Name="WalkLeft" Type="Action" />
+ 	<Node Name="JumpRightRunShort" Type="Sequence" Node_id="186" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="187" />
+			<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="191" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="190" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ <Node Name="WalkLeft" Type="Action" />
+ <Node Name="Fire" Type="Action" />
+ <Node Name="Down" Type="Action" />
+ 	<Node Name="JumpLeftShort" Type="Sequence" Node_id="146" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="147" />
+			<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="151" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpLeft" Operation="JumpLeft" Type="Action" Node_id="150" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ 	<Node Name="JumpRightRunLong" Type="Sequence" Node_id="98" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="99" />
+			<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="100" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="101" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ 	<Node Name="WalkLeftSafe" Type="Selector" Node_id="251" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="Hole" Type="Sequence" Node_id="252" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="HoleBack" Operation="HoleBack" Type="Condition" Node_id="253" />
+					<Node Name="JumpLeftRunLong" Type="Sequence" Node_id="282" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="283" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="284" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpLeftRun" Operation="JumpLeftRun" Type="Action" Node_id="285" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="Obstacle" Type="Sequence" Node_id="258" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="ObstacleBack" Operation="ObstacleBack" Type="Condition" Node_id="259" />
+					<Node Name="JumpLeftRunLong" Type="Sequence" Node_id="286" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="287" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="288" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpLeftRun" Operation="JumpLeftRun" Type="Action" Node_id="289" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="jumpableEnemy" Type="Sequence" Node_id="264" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpableEnemyBack" Operation="JumpableEnemyBack" Type="Condition" Node_id="265" />
+					<Node Name="JumpLeftShort" Type="Sequence" Node_id="299" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="300" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="301" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpLeft" Operation="JumpLeft" Type="Action" Node_id="302" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="noJumpableEnemy" Type="Sequence" Node_id="270" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="NoJumpableEnemyBack" Operation="NoJumpableEnemyBack" Type="Condition" Node_id="271" />
+					<Node Name="JumpLeftRunLong" Type="Sequence" Node_id="290" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="291" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="292" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpLeftRun" Operation="JumpLeftRun" Type="Action" Node_id="293" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="WalkLeft" Operation="WalkLeft" Type="Action" Node_id="276" />
+		</Connector>
+	</Node>
+ <Node Name="NOP" Type="Action" />
+ <Node Name="WalkRight" Type="Action" />
+ 	<Node Name="JumpRightShort" Type="Sequence" Node_id="194" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="195" />
+			<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="199" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpRight" Operation="JumpRight" Type="Action" Node_id="197" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ 	<Node Name="JumpLeftRunShort" Type="Sequence" Node_id="138" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="139" />
+			<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="143" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpLeftRun" Operation="JumpLeftRun" Type="Action" Node_id="144" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ 	<Node Name="VerticalJumpShort" Type="Sequence" Node_id="213" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="214" />
+			<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="218" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="VerticalJump" Operation="VerticalJump" Type="Action" Node_id="215" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ </Connector>
+</Node>
+ </Connector>
+</Node>
+ </Connector>
+</Node>
+  <Node Type="Sequence" Name="BehaviourBlock" >
+ <Connector Identifier="GenericChildren">
+ <Node Name="HoleBack" Type="Condition" />
+ <Node Name="JumpableEnemyAhead" Type="Condition" />
+ <Node Type="Sequence" Name="mySequence" >
+ <Connector Identifier="GenericChildren">
+ 	<Node Name="JumpRightShort" Type="Sequence" Node_id="194" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="195" />
+			<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="199" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpRight" Operation="JumpRight" Type="Action" Node_id="197" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ 	<Node Name="JumpRightRunLong" Type="Sequence" Node_id="98" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="99" />
+			<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="100" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="101" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ <Node Name="WalkLeft" Type="Action" />
+ <Node Name="WalkLeft" Type="Action" />
+ <Node Name="Fire" Type="Action" />
+ 	<Node Name="UseLeftGap" Type="Sequence" Node_id="75" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="GoGapOnLeft" Operation="GoGapOnLeft" Type="Action" Node_id="76" />
+			<Node Name="JumpRightLongModified" Type="Sequence" Node_id="77" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="NOP" Operation="NOP" Type="Action" Node_id="78" />
+					<Node Filter_Type="Loop" Name="Loop_Make_Jump" Times="2" Type="Filter" Node_id="79" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="VerticalJump" Operation="VerticalJump" Type="Action" Node_id="80" />
+						</Connector>
+					</Node>
+					<Node Filter_Type="Loop" Name="Loop_Make_Jump" Times="9" Type="Filter" Node_id="81" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="JumpRight" Operation="JumpRight" Type="Action" Node_id="82" />
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ <Node Name="Fire" Type="Action" />
+ 	<Node Name="JumpRightRunShort" Type="Sequence" Node_id="186" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="187" />
+			<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="191" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="190" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ 	<Node Name="JumpRightLong" Type="Sequence" Node_id="93" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="94" />
+			<Node Filter_Type="Loop" Name="Loop_Make_Jump" Times="9" Type="Filter" Node_id="95" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpRight" Operation="JumpRight" Type="Action" Node_id="96" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ 	<Node Name="GoUnderLeft" Type="Sequence" Node_id="593" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="IsStuck" Operation="IsStuck" Type="Condition" Node_id="656" />
+			<Node Name="ObstacleHead" Operation="ObstacleHead" Type="Condition" Node_id="657" />
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="594" />
+			<Node Filter_Type="Loop" Name="Loop_GoingBack" Times="10" Type="Filter" Node_id="595" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="RunSequence" Type="Sequence" Node_id="596" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="RunRightSafe" Type="Selector" Node_id="597" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="Hole" Type="Sequence" Node_id="598" >
+										<Connector Identifier="GenericChildren">
+											<Node Name="HoleAhead" Operation="HoleAhead" Type="Condition" Node_id="599" />
+											<Node Name="JumpRightRunLong" Type="Sequence" Node_id="600" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="NOP" Operation="NOP" Type="Action" Node_id="601" />
+													<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="602" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="603" />
+														</Connector>
+													</Node>
+												</Connector>
+											</Node>
+										</Connector>
+									</Node>
+									<Node Name="Obstacle" Type="Sequence" Node_id="604" >
+										<Connector Identifier="GenericChildren">
+											<Node Name="ObstacleAhead" Operation="ObstacleAhead" Type="Condition" Node_id="605" />
+											<Node Name="JumpRightRunLong" Type="Sequence" Node_id="606" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="NOP" Operation="NOP" Type="Action" Node_id="607" />
+													<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="608" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="609" />
+														</Connector>
+													</Node>
+												</Connector>
+											</Node>
+										</Connector>
+									</Node>
+									<Node Name="jumpableEnemy" Type="Sequence" Node_id="610" >
+										<Connector Identifier="GenericChildren">
+											<Node Name="JumpableEnemyAhead" Operation="JumpableEnemyAhead" Type="Condition" Node_id="611" />
+											<Node Name="JumpRightShort" Type="Sequence" Node_id="612" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="NOP" Operation="NOP" Type="Action" Node_id="613" />
+													<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="614" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="JumpRight" Operation="JumpRight" Type="Action" Node_id="615" />
+														</Connector>
+													</Node>
+												</Connector>
+											</Node>
+										</Connector>
+									</Node>
+									<Node Name="noJumpableEnemy" Type="Sequence" Node_id="616" >
+										<Connector Identifier="GenericChildren">
+											<Node Name="NoJumpableEnemyAhead" Operation="NoJumpableEnemyAhead" Type="Condition" Node_id="617" />
+											<Node Name="JumpRightRunLong" Type="Sequence" Node_id="618" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="NOP" Operation="NOP" Type="Action" Node_id="619" />
+													<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="620" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="621" />
+														</Connector>
+													</Node>
+												</Connector>
+											</Node>
+										</Connector>
+									</Node>
+									<Node Name="RunRight" Operation="RunRight" Type="Action" Node_id="622" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Filter_Type="Non" Name="Loop_GoingForward" Type="Filter" Node_id="623" >
+				<Connector Identifier="GenericChildren">
+					<Node Filter_Type="Until_Fails_Limited" Name="UFL" Times="50" Type="Filter" Node_id="624" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="GoingForward" Type="Sequence" Node_id="625" >
+								<Connector Identifier="GenericChildren">
+									<Node Filter_Type="Non" Name="Non" Type="Filter" Node_id="626" >
+										<Connector Identifier="GenericChildren">
+											<Node Name="ObstacleHeadBack" Operation="ObstacleHeadBack" Type="Condition" Node_id="627" />
+										</Connector>
+									</Node>
+									<Node Name="RunLeftSafe" Type="Selector" Node_id="628" >
+										<Connector Identifier="GenericChildren">
+											<Node Name="Hole" Type="Sequence" Node_id="629" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="HoleBack" Operation="HoleBack" Type="Condition" Node_id="630" />
+													<Node Name="JumpLeftRunLong" Type="Sequence" Node_id="631" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="NOP" Operation="NOP" Type="Action" Node_id="632" />
+															<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="633" >
+																<Connector Identifier="GenericChildren">
+																	<Node Name="JumpLeftRun" Operation="JumpLeftRun" Type="Action" Node_id="634" />
+																</Connector>
+															</Node>
+														</Connector>
+													</Node>
+												</Connector>
+											</Node>
+											<Node Name="Obstacle" Type="Sequence" Node_id="635" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="ObstacleBack" Operation="ObstacleBack" Type="Condition" Node_id="636" />
+													<Node Name="JumpLeftRunLong" Type="Sequence" Node_id="637" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="NOP" Operation="NOP" Type="Action" Node_id="638" />
+															<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="639" >
+																<Connector Identifier="GenericChildren">
+																	<Node Name="JumpLeftRun" Operation="JumpLeftRun" Type="Action" Node_id="640" />
+																</Connector>
+															</Node>
+														</Connector>
+													</Node>
+												</Connector>
+											</Node>
+											<Node Name="jumpableEnemy" Type="Sequence" Node_id="641" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="JumpableEnemyBack" Operation="JumpableEnemyBack" Type="Condition" Node_id="642" />
+													<Node Name="JumpLeftShort" Type="Sequence" Node_id="643" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="NOP" Operation="NOP" Type="Action" Node_id="644" />
+															<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="645" >
+																<Connector Identifier="GenericChildren">
+																	<Node Name="JumpLeft" Operation="JumpLeft" Type="Action" Node_id="646" />
+																</Connector>
+															</Node>
+														</Connector>
+													</Node>
+												</Connector>
+											</Node>
+											<Node Name="noJumpableEnemy" Type="Sequence" Node_id="647" >
+												<Connector Identifier="GenericChildren">
+													<Node Name="NoJumpableEnemyBack" Operation="NoJumpableEnemyBack" Type="Condition" Node_id="648" />
+													<Node Name="JumpLeftRunLong" Type="Sequence" Node_id="649" >
+														<Connector Identifier="GenericChildren">
+															<Node Name="NOP" Operation="NOP" Type="Action" Node_id="650" />
+															<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="651" >
+																<Connector Identifier="GenericChildren">
+																	<Node Name="JumpLeftRun" Operation="JumpLeftRun" Type="Action" Node_id="652" />
+																</Connector>
+															</Node>
+														</Connector>
+													</Node>
+												</Connector>
+											</Node>
+											<Node Name="RunLeft" Operation="RunLeft" Type="Action" Node_id="653" />
+										</Connector>
+									</Node>
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Filter_Type="Loop" Name="Loop_GoingUnder" Times="5" Type="Filter" Node_id="654" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="Down" Operation="Down" Type="Action" Node_id="655" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ 	<Node Name="JumpRightRunShort" Type="Sequence" Node_id="186" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="187" />
+			<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="191" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="190" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ <Node Name="NOP" Type="Action" />
+ <Node Name="Speed" Type="Action" />
+ </Connector>
+</Node>
+ </Connector>
+</Node>
+  <Node Type="Sequence" Name="defaultSequence" >
+ <Connector Identifier="GenericChildren">
+ 	<Node Name="RunRightSafe" Type="Selector" Node_id="293" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="Hole" Type="Sequence" Node_id="294" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="HoleAhead" Operation="HoleAhead" Type="Condition" Node_id="295" />
+					<Node Name="JumpRightRunLong" Type="Sequence" Node_id="301" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="302" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="303" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="304" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="Obstacle" Type="Sequence" Node_id="305" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="ObstacleAhead" Operation="ObstacleAhead" Type="Condition" Node_id="306" />
+					<Node Name="JumpRightRunLong" Type="Sequence" Node_id="307" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="308" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="309" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="310" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="jumpableEnemy" Type="Sequence" Node_id="311" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpableEnemyAhead" Operation="JumpableEnemyAhead" Type="Condition" Node_id="312" />
+					<Node Name="JumpRightShort" Type="Sequence" Node_id="328" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="329" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="330" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpRight" Operation="JumpRight" Type="Action" Node_id="331" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="noJumpableEnemy" Type="Sequence" Node_id="317" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="NoJumpableEnemyAhead" Operation="NoJumpableEnemyAhead" Type="Condition" Node_id="318" />
+					<Node Name="JumpRightRunLong" Type="Sequence" Node_id="319" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="320" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="321" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="322" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="RunRight" Operation="RunRight" Type="Action" Node_id="332" />
+		</Connector>
+	</Node>
+ <Node Name="Fire" Type="Action" />
+ 	<Node Name="RunRightSafe" Type="Selector" Node_id="293" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="Hole" Type="Sequence" Node_id="294" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="HoleAhead" Operation="HoleAhead" Type="Condition" Node_id="295" />
+					<Node Name="JumpRightRunLong" Type="Sequence" Node_id="301" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="302" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="303" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="304" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="Obstacle" Type="Sequence" Node_id="305" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="ObstacleAhead" Operation="ObstacleAhead" Type="Condition" Node_id="306" />
+					<Node Name="JumpRightRunLong" Type="Sequence" Node_id="307" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="308" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="309" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="310" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="jumpableEnemy" Type="Sequence" Node_id="311" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpableEnemyAhead" Operation="JumpableEnemyAhead" Type="Condition" Node_id="312" />
+					<Node Name="JumpRightShort" Type="Sequence" Node_id="328" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="329" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="330" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpRight" Operation="JumpRight" Type="Action" Node_id="331" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="noJumpableEnemy" Type="Sequence" Node_id="317" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="NoJumpableEnemyAhead" Operation="NoJumpableEnemyAhead" Type="Condition" Node_id="318" />
+					<Node Name="JumpRightRunLong" Type="Sequence" Node_id="319" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="NOP" Operation="NOP" Type="Action" Node_id="320" />
+							<Node Filter_Type="Loop" Name="Loop_Run" Times="9" Type="Filter" Node_id="321" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="322" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="RunRight" Operation="RunRight" Type="Action" Node_id="332" />
+		</Connector>
+	</Node>
+ </Connector>
+</Node>
+ </Connector>
+ </Node>
+ </Node>
+ </Behavior>
+

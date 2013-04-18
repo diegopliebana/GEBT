@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <Behavior>
+ <Node Name="GE_BT3" Type="Root" >
+ <Node Type="Selector" Name="rootSelector" >
+ <Connector Identifier="GenericChildren">
+  <Node Type="Sequence" Name="BehaviourBlock" >
+ <Connector Identifier="GenericChildren">
+ <Node Name="NoJumpableEnemyAhead" Type="Condition" />
+ <Node Name="EnemyAhead" Type="Condition" />
+ <Node Type="Sequence" Name="mySequence" >
+ <Connector Identifier="GenericChildren">
+ 	<Node Name="JumpRightRunShort" Type="Sequence" Node_id="186" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="187" />
+			<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="191" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="190" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ </Connector>
+</Node>
+ </Connector>
+</Node>
+  <Node Type="Sequence" Name="BehaviourBlock" >
+ <Connector Identifier="GenericChildren">
+ <Node Name="UnderBrick" Type="Condition" />
+ <Node Type="Sequence" Name="mySequence" >
+ <Connector Identifier="GenericChildren">
+ <Node Name="GetPathToClosestItem" Type="Action" />
+ </Connector>
+</Node>
+ </Connector>
+</Node>
+  <Node Type="Sequence" Name="BehaviourBlock" >
+ <Connector Identifier="GenericChildren">
+ <Node Name="EnemyAhead" Type="Condition" />
+ <Node Name="JumpableEnemyAhead" Type="Condition" />
+ <Node Type="Sequence" Name="mySequence" >
+ <Connector Identifier="GenericChildren">
+ <Node Name="GetPathToClosestQuestion" Type="Action" />
+ </Connector>
+</Node>
+ </Connector>
+</Node>
+  <Node Type="Sequence" Name="BehaviourBlock" >
+ <Connector Identifier="GenericChildren">
+ <Node Name="EnemyBack" Type="Condition" />
+ <Node Type="Sequence" Name="mySequence" >
+ <Connector Identifier="GenericChildren">
+ 	<Node Name="JumpRightLong" Type="Sequence" Node_id="93" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="94" />
+			<Node Filter_Type="Loop" Name="Loop_Make_Jump" Times="9" Type="Filter" Node_id="95" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpRight" Operation="JumpRight" Type="Action" Node_id="96" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ <Node Name="GetPathToClosestItem" Type="Action" />
+ </Connector>
+</Node>
+ </Connector>
+</Node>
+  <Node Type="Sequence" Name="BehaviourBlock" >
+ <Connector Identifier="GenericChildren">
+ <Node Name="EnemyBackDown" Type="Condition" />
+ <Node Filter_Type="Until_Fails_Limited" Name="UFL" Times="5" Type="Filter" >
+ <Connector Identifier="GenericChildren">
+ <Node Type="Sequence" Name="mySequence" >
+ <Connector Identifier="GenericChildren">
+ 	<Node Name="JumpRightRunShort" Type="Sequence" Node_id="186" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="187" />
+			<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="191" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="190" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ </Connector>
+</Node>
+ </Connector>
+</Node>
+ </Connector>
+</Node>
+  <Node Type="Sequence" Name="BehaviourBlock" >
+ <Connector Identifier="GenericChildren">
+ <Node Name="IsStuck" Type="Condition" />
+ <Node Name="EnemyBackUp" Type="Condition" />
+ <Node Type="Sequence" Name="mySequence" >
+ <Connector Identifier="GenericChildren">
+ 	<Node Name="JumpRightRunShort" Type="Sequence" Node_id="186" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="NOP" Operation="NOP" Type="Action" Node_id="187" />
+			<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="191" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="190" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+ <Node Name="WalkRight" Type="Action" />
+ <Node Name="GetPathToClosestItem" Type="Action" />
+ </Connector>
+</Node>
+ </Connector>
+</Node>
+  <Node Type="Sequence" Name="defaultSequence" >
+ <Connector Identifier="GenericChildren">
+  	<Node Name="DefaultGoRight" Type="Selector" Node_id="31" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="DefaultPathPlanner" Type="Sequence" Node_id="32" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="Should_I_recalculate" Type="Selector" Node_id="33" >
+						<Connector Identifier="GenericChildren">
+							<Node Filter_Type="Non" Name="NON" Type="Filter" Node_id="34" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="IsFollowingPath" Operation="IsFollowingPath" Type="Condition" Node_id="35" />
+								</Connector>
+							</Node>
+							<Node Name="IsRightMostCloseToEnd" Operation="void" Type="Condition" Node_id="36" />
+						</Connector>
+					</Node>
+					<Node Name="PathAssurance" Type="Selector" Node_id="37" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="GetPathToRightMost" Operation="GetPathToRightMost" Type="Condition" Node_id="38" />
+							<Node Name="NoPathAction" Operation="NoPathAction" Type="Action" Node_id="47" />
+							<Node Name="JumpRightRunLong" Type="Sequence" Node_id="43" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="NOP" Operation="NOP" Type="Action" Node_id="44" />
+									<Node Filter_Type="Loop" Name="Loop_Run" Times="25" Type="Filter" Node_id="45" >
+										<Connector Identifier="GenericChildren">
+											<Node Name="JumpRightRun" Operation="JumpRightRun" Type="Action" Node_id="46" />
+										</Connector>
+									</Node>
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+			<Node Name="Follower" Type="Sequence" Node_id="40" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="IsFollowingPath" Operation="IsFollowingPath" Type="Condition" Node_id="41" />
+					<Node Name="FollowCurrentPath" Operation="FollowCurrentPath" Type="Action" Node_id="42" />
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+  </Connector>
+</Node>
+ </Connector>
+ </Node>
+ </Node>
+ </Behavior>
+

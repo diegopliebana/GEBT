@@ -1,0 +1,179 @@
+\ProvidesPackage{beamerthemencocasl}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% STYLE, HEADERS, BACKGROUND
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{navigation symbols}{}
+
+\usebackgroundtemplate{
+\includegraphics[height=1\paperheight]{ncralogotrans.pdf}
+}
+
+\logo{\hbox{\includegraphics[height = 5mm]{ncraurl.pdf}}}
+
+\setbeamertemplate{blocks}[rounded][shadow=true]
+\defbeamertemplate*{headline}{ncocasl theme}{
+	\includegraphics[width=\paperwidth]{ncobanner.pdf}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ENVIRONMENTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newenvironment{caslgraphframe}[0]{
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{caslgraph.pdf}}
+\begin{frame}[plain]
+\end{frame}
+}}
+
+\newenvironment{clustersframe}[0]{
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{clusters.pdf}}
+\begin{frame}[plain]
+\end{frame}
+}}
+
+\newenvironment{titleframe}[3]{
+{
+\usebackgroundtemplate{\includegraphics[width=\paperwidth]{casltitle.pdf}}
+\begin{frame}[plain]
+	\vspace{1.2cm}
+	\Large{\bf \textcolor{white}{#1}}\\
+	\vspace{.1cm}
+	\Large{\it \textcolor{white}{#2}}\\
+	\vspace{1.0cm}
+	\small{\it \textcolor{white}{#3}}\\
+	\vfill
+\end{frame}
+}}
+
+\mode<presentation>
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% COLOURS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{lgreen}{rgb}{0.85, 0.95, 0.85}
+\definecolor{tgreen}{rgb}{0.00, 0.65, 0.00}
+\definecolor{dgreen}{rgb}{0.20, 0.50, 0.20}
+\setbeamercolor{structure}{fg = tgreen, bg = white}
+\setbeamercolor{background canvas}{fg = tgreen, bg = white}
+\setbeamercolor{section in head/foot}{fg = tgreen, bg = white}
+\setbeamercolor{frametitle}{fg = tgreen, bg = white}
+%\setbeamercolor{alerted text}{fg=black!40!red,bg=bg}
+%\setbeamercolor{example text}{fg=lgreen,bg=bg}
+\setbeamercolor{block title}{fg = white, bg = dgreen}
+%\setbeamercolor{block title alerted}{fg=alerted text.fg,bg=alerted text.fg!10!bg}
+%\setbeamercolor{block title example}{fg=example text.fg,bg=example text.fg!10!bg}
+\setbeamercolor{block body}{fg = black, bg = lgreen}
+%\setbeamercolor{block body alerted}{fg=normal text.fg,bg=alerted text.fg!10!bg}
+%\setbeamercolor{block body example}{fg=normal text.fg,bg=example text.fg!10!bg}
+\setbeamercolor{title}{fg = dgreen, bg = white}
+\setbeamercolor{subtitle}{parent = title, fg = dgreen, bg = white}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% FONTS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usefonttheme{default}
+\setbeamertemplate{bibliography item}[ncocasl theme]
+\setbeamerfont{bibliography entry author}{shape=\upshape,series=\bfseries,size=\scriptsize}%
+\setbeamerfont{bibliography entry title}{shape=\upshape,size=\tiny,series=\mdseries}
+\setbeamerfont{bibliography entry journal}{shape=\upshape,size=\tiny,series=\mdseries}
+\setbeamerfont{bibliography entry note}{shape=\upshape,size=\tiny,series=\mdseries}
+\setbeamerfont{itemize/enumerate body}{size=\small}
+\setbeamerfont{itemize/enumerate subbody}{size=\footnotesize}
+\setbeamerfont{itemize/enumerate subsubbody}{size=\scriptsize}
+\setbeamerfont{block title}{size=\normalsize,series=\bfseries,parent={structure,block body}}
+\setbeamerfont{section in head/foot}{size=\tiny,series=\bfseries}
+\renewcommand{\emph}[1]{\color{structure.fg}\textbf{#1}\color{fg}\xspace}
+\setbeamerfont{section in toc}{parent=structure,series=\bfseries}
+\setbeamerfont{title}{size=\normalsize,series=\bfseries,parent=structure}
+\setbeamerfont{subtitle}{size=\scriptsize,series=\bfseries,parent=structure}
+\setbeamerfont{author}{size=\scriptsize,series=\bfseries,parent=structure}
+\setbeamerfont{institute}{size=\scriptsize,series=\mdseries,parent=structure}
+\setbeamerfont{date}{size=\scriptsize,series=\mdseries,parent=structure}
+% \setbeamerfont{alerted text}{}
+% \setbeamerfont{example text}{}
+% \setbeamerfont{structure}{}
+% \setbeamerfont{tiny structure}{size=\tiny}
+% \setbeamerfont{title in sidebar}{size=\tiny}
+% \setbeamerfont{title in head/foot}{}
+% \setbeamerfont{subtitle}{size=\normalsize,parent=title}
+% \setbeamerfont{author}{}
+% \setbeamerfont{author in head/foot}{}
+% \setbeamerfont{author in sidebar}{size=\tiny}
+% \setbeamerfont{institute}{size=\scriptsize}
+% \setbeamerfont{institute in head/foot}{}
+% \setbeamerfont{institute in sidebar}{}
+% \setbeamerfont{date}{}
+% \setbeamerfont{date in head/foot}{}
+% \setbeamerfont{date in sidebar}{}
+% \setbeamerfont{part name}{size=\Large}
+% \setbeamerfont{part title}{parent=title}
+% \setbeamerfont{section in toc}{parent=structure}
+% \setbeamerfont{section in toc shaded}{parent=section in toc}
+% \setbeamerfont{section in head/foot}{}
+% \setbeamerfont{section in sidebar}{size=\tiny}
+% \setbeamerfont{section number projected}{size=\small,parent={section in toc,projected text}}
+% \setbeamerfont{subsection in toc}{}
+% \setbeamerfont{subsection in toc shaded}{parent=subsection in toc}
+% \setbeamerfont{subsection in head/foot}{}
+% \setbeamerfont{subsection in sidebar}{}
+% \setbeamerfont{subsubsection in toc}{size=\footnotesize}
+% \setbeamerfont{subsubsection in toc shaded}{parent=subsubsection in toc}
+% \setbeamerfont{subsubsection in head/foot}{}
+% \setbeamerfont{subsubsection in sidebar}{}
+% \setbeamerfont{headline}{parent={tiny structure}}
+% \setbeamerfont{footline}{parent={tiny structure}}
+% \setbeamerfont{sidebar}{size=\Tiny,parent={tiny structure}}
+% \setbeamerfont{sidebar left}{parent=sidebar}
+% \setbeamerfont{sidebar right}{parent=sidebar}
+\setbeamerfont{frametitle}{parent=structure,size=\large}
+% \setbeamerfont{framesubtitle}{parent=frametitle,size=\footnotesize}
+% \setbeamerfont{caption}{size=\small}
+% \setbeamerfont{caption name}{parent={structure,caption}}
+% \setbeamerfont{button}{size=\tiny}
+% \setbeamerfont{block body}{}
+% \setbeamerfont{block body alerted}{}
+% \setbeamerfont{block body example}{}
+% \setbeamerfont{block title}{size=\large,parent={structure,block body}}
+% \setbeamerfont{block title alerted}{parent={block title,alerted text}}
+% \setbeamerfont{block title example}{parent={block title,example text}}
+% \setbeamerfont{item}{parent=structure}
+% \setbeamerfont{subitem}{parent=item}
+% \setbeamerfont{subsubitem}{parent=subitem}
+% \setbeamerfont{item projected}{size=\tiny,parent={item,projected text}}
+% \setbeamerfont{subitem projected}{parent=item projected}
+% \setbeamerfont{subsubitem projected}{parent=subitem projected}
+% \setbeamerfont{itemize item}{parent=item}
+% \setbeamerfont{itemize subitem}{parent=subitem}
+% \setbeamerfont{itemize subsubitem}{parent=subsubitem}
+% \setbeamerfont{enumerate item}{parent=item}
+% \setbeamerfont{enumerate subitem}{parent=subitem}
+% \setbeamerfont{enumerate subsubitem}{parent=subsubitem}
+% \setbeamerfont{itemize/enumerate body}{}
+% \setbeamerfont{itemize/enumerate subbody}{size=\small}
+% \setbeamerfont{itemize/enumerate subsubbody}{size=\footnotesize}
+% \setbeamerfont{description item}{parent=item}
+% \setbeamerfont{projected text}{parent={tiny structure}}
+% \setbeamerfont{abstract}{size=\small}
+% \setbeamerfont{abstract title}{parent={abstract,structure},size=\normalsize}
+% \setbeamerfont{verse}{family=\rmfamily,shape=\itshape}
+% \setbeamerfont{quotation}{shape=\itshape}
+% \setbeamerfont{quote}{parent=quotation}
+% \setbeamerfont{note page}{size=\small}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INNER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{sections/subsections in toc}[ball]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OUTER
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mode
+<all>
+
