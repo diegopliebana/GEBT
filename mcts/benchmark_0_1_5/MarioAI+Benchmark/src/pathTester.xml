@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Behavior>
+	<Node Name="Root_node" Type="Root" Node_id="2" >
+		<Connector Identifier="GenericChildren">
+			<Node Name="Main_Selector" Operation="void" Type="Selector" Node_id="3" >
+				<Connector Identifier="GenericChildren">
+					<Node Name="Reactive" Type="Sequence" Node_id="4" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="GetPathAToB" Operation="GetPathAToB" Type="Condition" Node_id="5" />
+							<Node Name="JumpableEnemyAhead" Operation="JumpableEnemyAhead" Type="Condition" Node_id="6" />
+							<Node Name="JumpRightShort" Type="Sequence" Node_id="7" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="NOP" Operation="NOP" Type="Action" Node_id="8" />
+									<Node Filter_Type="Loop" Name="Loop_Run" Times="3" Type="Filter" Node_id="9" >
+										<Connector Identifier="GenericChildren">
+											<Node Name="JumpRight" Operation="JumpRight" Type="Action" Node_id="10" />
+										</Connector>
+									</Node>
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+					<Node Name="DefaultPathPlanner" Type="Sequence" Node_id="11" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="Should_I_recalculate" Type="Selector" Node_id="20" >
+								<Connector Identifier="GenericChildren">
+									<Node Filter_Type="Non" Name="NON" Type="Filter" Node_id="21" >
+										<Connector Identifier="GenericChildren">
+											<Node Name="IsFollowingPath" Operation="IsFollowingPath" Type="Condition" Node_id="22" />
+										</Connector>
+									</Node>
+									<Node Name="IsRightMostCloseToEnd" Operation="void" Type="Condition" Node_id="23" />
+								</Connector>
+							</Node>
+							<Node Name="PathAssurance" Type="Selector" Node_id="14" >
+								<Connector Identifier="GenericChildren">
+									<Node Name="GetPathToRightMost" Operation="GetPathToRightMost" Type="Condition" Node_id="15" />
+									<Node Name="WalkRight" Operation="WalkRight" Type="Action" Node_id="16" />
+								</Connector>
+							</Node>
+						</Connector>
+					</Node>
+					<Node Name="Follower" Type="Sequence" Node_id="17" >
+						<Connector Identifier="GenericChildren">
+							<Node Name="IsFollowingPath" Operation="IsFollowingPath" Type="Condition" Node_id="18" />
+							<Node Name="FollowCurrentPath" Operation="FollowCurrentPath" Type="Action" Node_id="19" />
+						</Connector>
+					</Node>
+				</Connector>
+			</Node>
+		</Connector>
+	</Node>
+</Behavior>
