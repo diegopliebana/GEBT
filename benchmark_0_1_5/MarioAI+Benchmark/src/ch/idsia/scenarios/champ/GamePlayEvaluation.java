@@ -9,7 +9,6 @@ import ch.idsia.tools.CmdLineOptions;
 import ch.idsia.tools.EvaluationInfo;
 import ch.idsia.tools.EvaluationOptions;
 import ch.idsia.utils.StatisticalSummary;
-import grammaticalbehaviors.GEBT_Mario.GEBT_MarioAgent;
 
 
 /**
@@ -54,7 +53,8 @@ public final class GamePlayEvaluation
 //        final Agent agent = (SimpleCNAgent) Easy.load("sergeypolikarpov.xml");
 //        System.out.println("agent = " + agent);
 
-        ((GEBT_MarioAgent)agent).loadBehaviorTree("pathFollower.xml");
+        //((grammaticalbehaviors.GEBT_Mario.GEBT_MarioAgent)agent).loadBehaviorTree("pathFollower.xml");
+        ((grammaticalbehaviorsNoAstar.GEBT_Mario.GEBT_MarioAgent)agent).loadBehaviorTree("bestIndividual_GEBT_MarioAgent_NoAstar.xml");
 
         cmdLineOptions.setAgent(agent);
         final BasicTask basicTask = new BasicTask(cmdLineOptions);

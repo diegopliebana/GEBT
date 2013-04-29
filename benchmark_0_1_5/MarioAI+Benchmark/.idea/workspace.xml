@@ -19,6 +19,21 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/Actions/Down.java" line="7" class="Down.java" package="">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -59,34 +74,72 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GamePlayEvaluation.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GamePlayEvaluation.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ch/idsia/scenarios/champ/GamePlayEvaluation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="55" column="38" selection-start="2187" selection-end="2187" vertical-scroll-proportion="0.5425532">
+            <state line="59" column="0" selection-start="2414" selection-end="2414" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Level.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ch/idsia/mario/engine/level/Level.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="136" column="42" selection-start="4016" selection-end="4016" vertical-scroll-proportion="0.57223797">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicTask.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch/idsia/maibe/tasks/BasicTask.java">
+      <file leaf-file-name="BehaviorTree.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/BehaviorTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="0" selection-start="1817" selection-end="1817" vertical-scroll-proportion="0.0">
+            <state line="41" column="0" selection-start="828" selection-end="828" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="GEBT_MarioAgent.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviors/GEBT_Mario/GEBT_MarioAgent.java">
+        <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/GEBT_Mario/GEBT_MarioAgent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="407" column="0" selection-start="12583" selection-end="12583" vertical-scroll-proportion="0.0">
+            <state line="86" column="26" selection-start="2626" selection-end="2626" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/BTNonFilter.java" />
+        <option value="$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/BTParallelNode.java" />
+        <option value="$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/BTRootNode.java" />
+        <option value="$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/BTSelectNode.java" />
+        <option value="$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/BTSequenceNode.java" />
+        <option value="$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/BTStream.java" />
+        <option value="$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/BTUntilFails.java" />
+        <option value="$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/BTUntilFailsLimitedFilter.java" />
+        <option value="$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/IncorrectNodeException.java" />
+        <option value="$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/Main.java" />
+        <option value="$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/XML_BTReader.java" />
+        <option value="$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/Conditions/IsGapOnRight.java" />
+        <option value="$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/Conditions/IsGapOnLeft.java" />
+        <option value="$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/GEBT_Mario/EvoMain.java" />
+        <option value="$PROJECT_DIR$/src/ch/idsia/scenarios/champ/GamePlayEvaluation.java" />
+        <option value="$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/GEBT_Mario/GEBT_MarioAgent.java" />
+      </list>
+    </option>
   </component>
   <component name="ModuleEditorState">
     <option name="LAST_EDITED_MODULE_NAME" />
@@ -118,6 +171,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -165,7 +219,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="idsia" />
+              <option name="myItemId" value="grammaticalbehaviorsNoAstar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GEBT_Mario" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -183,37 +241,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="idsia" />
+              <option name="myItemId" value="grammaticalbehaviorsNoAstar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="scenarios" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Mario_GEBT_Journal" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MarioAI+Benchmark" />
+              <option name="myItemId" value="bt" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="idsia" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scenarios" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="champ" />
+              <option name="myItemId" value="Conditions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -231,35 +267,64 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="idsia" />
+              <option name="myItemId" value="grammaticalbehaviorsNoAstar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="mario" />
+              <option name="myItemId" value="bt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="behaviortree" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Mario_GEBT_Journal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MarioAI+Benchmark" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grammaticalbehaviorsNoAstar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Actions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
-    <property name="MemberChooser.sorted" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="MemberChooser.sorted" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="dynamic.classpath" value="false" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
   <component name="RunManager" selected="Application.GamePlayEvaluation">
     <configuration default="false" name="GamePlayEvaluation" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="ch.idsia.scenarios.champ.GamePlayEvaluation" />
       <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="-ag grammaticalbehaviors.GEBT_Mario.GEBT_MarioAgent" />
+      <option name="PROGRAM_PARAMETERS" value="-ag grammaticalbehaviorsNoAstar.GEBT_Mario.GEBT_MarioAgent" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
@@ -381,11 +446,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40994623" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -394,13 +460,12 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24967742" sideWeight="0.67069894" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24967742" sideWeight="0.51344085" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293011" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.48655915" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967742" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -451,23 +516,116 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ch/idsia/maibe/tasks/BasicTask.java">
+    <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/BTRootNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="1817" selection-end="1817" vertical-scroll-proportion="0.0">
+        <state line="5" column="35" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviors/GEBT_Mario/GEBT_MarioAgent.java">
+    <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/BTSelectNode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="407" column="0" selection-start="12583" selection-end="12583" vertical-scroll-proportion="0.0">
+        <state line="5" column="35" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/BTSequenceNode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="35" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/BTStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="35" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/BTUntilFails.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="11" selection-start="444" selection-end="444" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/BTUntilFailsLimitedFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="35" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/IncorrectNodeException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="35" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="35" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/XML_BTReader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="35" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/Conditions/IsGapOnRight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="34" selection-start="436" selection-end="436" vertical-scroll-proportion="0.2190016">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/Conditions/IsGapOnLeft.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="34" selection-start="436" selection-end="436" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/GEBT_Mario/EvoMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="176" column="40" selection-start="4975" selection-end="4975" vertical-scroll-proportion="0.44122383">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/bt/behaviortree/BehaviorTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="0" selection-start="828" selection-end="828" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/GEBT_Mario/GEBT_MarioAgent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="26" selection-start="2626" selection-end="2626" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ch/idsia/scenarios/champ/GamePlayEvaluation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="38" selection-start="2187" selection-end="2187" vertical-scroll-proportion="0.5425532">
+        <state line="59" column="0" selection-start="2414" selection-end="2414" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch/idsia/mario/engine/level/Level.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="136" column="42" selection-start="4016" selection-end="4016" vertical-scroll-proportion="0.57223797">
           <folding />
         </state>
       </provider>
