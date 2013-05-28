@@ -1,74 +1,94 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- You may freely edit this file. See commented blocks below for -->
-<!-- some examples of how to customize the build. -->
-<!-- (If you delete it and reopen the project it will be recreated.) -->
-<!-- By default, only the Clean and Build commands use this build script. -->
-<!-- Commands such as Run, Debug, and Test only use this build script if -->
-<!-- the Compile on Save feature is turned off for the project. -->
-<!-- You can turn off the Compile on Save (or Deploy on Save) setting -->
-<!-- in the project's Project Properties dialog box.-->
-<project name="CIG_MB015" default="default" basedir=".">
-    <description>Builds, tests, and runs the project CIG_MB015.</description>
-    <import file="nbproject/build-impl.xml"/>
-    <!--
+<project name="gebt" default="compile" basedir=".">
+  <description>Grammatical Evolution for Behaviour Trees</description>
+  <property name="src" location="src"/>
+  <property name="out" location="out/production/"/>
+  <property name="resources" location="${out}/ch/idsia/mario/engine/resources/"/>
 
-    There exist several targets which are by default empty and which can be 
-    used for execution of your tasks. These targets are usually executed 
-    before and after some main targets. They are: 
+  <!-- Init -->
+  <target name="init">
+    <tstamp/>
+    <mkdir dir="${out}"/>
+    <mkdir dir="${resources}"/>
+  </target>
 
-      -pre-init:                 called before initialization of project properties
-      -post-init:                called after initialization of project properties
-      -pre-compile:              called before javac compilation
-      -post-compile:             called after javac compilation
-      -pre-compile-single:       called before javac compilation of single file
-      -post-compile-single:      called after javac compilation of single file
-      -pre-compile-test:         called before javac compilation of JUnit tests
-      -post-compile-test:        called after javac compilation of JUnit tests
-      -pre-compile-test-single:  called before javac compilation of single JUnit test
-      -post-compile-test-single: called after javac compilation of single JUunit test
-      -pre-jar:                  called before JAR building
-      -post-jar:                 called after JAR building
-      -post-clean:               called after cleaning build products
+  <!-- Compiles the lot -->
+  <target name="compile" depends="init">
+    <javac srcdir="${src}" destdir="${out}" includeantruntime="false">
+      <classpath>
+        <fileset dir="lib">
+          <include name="**/*.jar"/>
+        </fileset>
+      </classpath>
+    </javac>
+    <copy todir="${resources}">
+	    <fileset dir="resources/"/>
+    </copy>	  
+  </target>
 
-    (Targets beginning with '-' are not intended to be called on their own.)
+  <!-- ant play - to play the game -->
+  <target name="play" depends="compile">
+    <java fork="true" classname="ch.idsia.scenarios.Play">
+      <classpath>
+	      <path location="${out}"/>
+	      <path location="lib/jdom.jar"/>
+      </classpath>
+    </java>
+  </target>
+  
+  <!-- ant runEvoNoAStar - Evolution with no A* -->
+  <target name="runEvoNoAStar" depends="compile">
+    <java fork="true" classname="grammaticalbehaviorsNoAstar.GEBT_Mario.EvoMain">
+      <classpath>
+	      <path location="${out}"/>
+	      <path location="lib/jdom.jar"/>
+      </classpath>
+      <arg value="-if"></arg>
+      <arg value="bestIndividual_GEBT_MarioAgent_NoAstar.xml"></arg>
+      <arg value="-of"></arg>
+      <arg value="fitnessOutputAStar"></arg>
+    </java>
+  </target>
+  
+  <!-- ant runEvoAStar - Evolution with A* -->
+  <target name="runEvoAStar" depends="compile">
+    <java fork="true" classname="grammaticalbehaviors.GEBT_Mario.EvoMain">
+      <classpath>
+	      <path location="${out}"/>
+	      <path location="lib/jdom.jar"/>
+      </classpath>
+      <arg value="-if"></arg>
+      <arg value="bestIndividual_GEBT_MarioAgent.xml"></arg>
+      <arg value="-of"></arg>
+      <arg value="fitnessOutputAStar"></arg>
+    </java>
+  </target>
+  
+  <!-- ant runGamePlayNoAStar -Execution of agent with no A* -->
+  <target name="runGamePlayNoAStar" depends="compile">
+    <java fork="true" classname="ch.idsia.scenarios.champ.GamePlayEvaluation">
+      <classpath>
+	      <path location="${out}"/>
+	      <path location="lib/jdom.jar"/>
+      </classpath>
+      <arg value="-ag"></arg>
+      <arg value="grammaticalbehaviorsNoAstar.GEBT_Mario.GEBT_MarioAgent"></arg>
+    </java>
+  </target>
 
-    Example of inserting an obfuscator after compilation could look like this:
+  
+  <!-- ant runGamePlayAStar -Execution of agent with A* -->
+  <target name="runGamePlayAStar" depends="compile">
+    <java fork="true" classname="ch.idsia.scenarios.champ.GamePlayEvaluation">
+      <classpath>
+	      <path location="${out}"/>
+	      <path location="lib/jdom.jar"/>
+      </classpath>
+      <arg value="-ag"></arg>
+      <arg value="grammaticalbehaviors.GEBT_Mario.GEBT_MarioAgent"></arg>
+    </java>
+  </target>
 
-        <target name="-post-compile">
-            <obfuscate>
-                <fileset dir="${build.classes.dir}"/>
-            </obfuscate>
-        </target>
-
-    For list of available properties check the imported 
-    nbproject/build-impl.xml file. 
-
-
-    Another way to customize the build is by overriding existing main targets.
-    The targets of interest are: 
-
-      -init-macrodef-javac:     defines macro for javac compilation
-      -init-macrodef-junit:     defines macro for junit execution
-      -init-macrodef-debug:     defines macro for class debugging
-      -init-macrodef-java:      defines macro for class execution
-      -do-jar-with-manifest:    JAR building (if you are using a manifest)
-      -do-jar-without-manifest: JAR building (if you are not using a manifest)
-      run:                      execution of project 
-      -javadoc-build:           Javadoc generation
-      test-report:              JUnit report generation
-
-    An example of overriding the target for project execution could look like this:
-
-        <target name="run" depends="CIG_MB015-impl.jar">
-            <exec dir="bin" executable="launcher.exe">
-                <arg file="${dist.jar}"/>
-            </exec>
-        </target>
-
-    Notice that the overridden target depends on the jar target and not only on 
-    the compile target as the regular run target does. Again, for a list of available 
-    properties which you can use, check the target you are overriding in the
-    nbproject/build-impl.xml file. 
-
-    -->
+  <target name="clean">
+    <delete dir="${out}"/>
+  </target>
 </project>

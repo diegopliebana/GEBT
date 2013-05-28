@@ -43,7 +43,7 @@ public final class GamePlayEvaluation
         final boolean[] creaturesEnables = new boolean[]{false};
         int levelSeed = cmdLineOptions.getLevelRandSeed();
 //        cmdLineOptions.setVisualization(false);
-        cmdLineOptions.setFPS(24);  //100
+        cmdLineOptions.setFPS(60);  //100
         //cmdLineOptions.setLevelRandSeed(6189642);
         cmdLineOptions.setLevelRandSeed(0);
 
@@ -54,7 +54,15 @@ public final class GamePlayEvaluation
 //        System.out.println("agent = " + agent);
 
         //((grammaticalbehaviors.GEBT_Mario.GEBT_MarioAgent)agent).loadBehaviorTree("pathFollower.xml");
-        ((grammaticalbehaviorsNoAstar.GEBT_Mario.GEBT_MarioAgent)agent).loadBehaviorTree("bestIndividual_GEBT_MarioAgent_NoAstar.xml");
+
+        if(args[1].equalsIgnoreCase("grammaticalbehaviorsNoAstar.GEBT_Mario.GEBT_MarioAgent"))
+        {
+            ((grammaticalbehaviorsNoAstar.GEBT_Mario.GEBT_MarioAgent)agent).loadBehaviorTree("bestIndividual_GEBT_MarioAgent_NoAstar.xml");
+
+        }else if(args[1].equalsIgnoreCase("grammaticalbehaviors.GEBT_Mario.GEBT_MarioAgent")){
+            ((grammaticalbehaviors.GEBT_Mario.GEBT_MarioAgent)agent).loadBehaviorTree("bestIndividual_GEBT_MarioAgent.xml");
+            //((grammaticalbehaviors.GEBT_Mario.GEBT_MarioAgent)agent).loadBehaviorTree("pathFollower.xml");
+        }
 
         cmdLineOptions.setAgent(agent);
         final BasicTask basicTask = new BasicTask(cmdLineOptions);

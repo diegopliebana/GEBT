@@ -1,0 +1,98 @@
+<project name="gebt" default="compile" basedir=".">
+  <description>Grammatical Evolution for Behaviour Trees</description>
+  <property name="src" location="src"/>
+  <property name="out" location="out/production/"/>
+  <property name="resources" location="${out}/ch/idsia/mario/engine/resources/"/>
+
+  <!-- Init -->
+  <target name="init">
+    <tstamp/>
+    <mkdir dir="${out}"/>
+    <mkdir dir="${resources}"/>
+  </target>
+
+  <!-- Compiles the lot -->
+  <target name="compile" depends="init">
+    <javac srcdir="${src}" destdir="${out}" includeantruntime="false">
+      <classpath>
+        <fileset dir="lib">
+          <include name="**/*.jar"/>
+        </fileset>
+      </classpath>
+    </javac>
+    <copy todir="${resources}">
+	    <fileset dir="resources/"/>
+    </copy>	  
+  </target>
+
+  <!-- ant play - to play the game -->
+  <target name="play" depends="compile">
+    <java fork="true" classname="ch.idsia.scenarios.Play">
+      <classpath>
+	      <path location="${out}"/>
+	      <path location="lib/jdom.jar"/>
+      </classpath>
+    </java>
+  </target>
+  
+  <!-- ant runEvoNoAStar - Evolution with no A* -->
+  <target name="runEvoNoAStar" depends="compile">
+    <java fork="true" classname="grammaticalbehaviorsNoAstar.GEBT_Mario.EvoMain">
+      <classpath>
+	      <path location="${out}"/>
+	      <path location="lib/jdom.jar"/>
+      </classpath>
+      <arg value="-ag"></arg>
+      <arg value="grammaticalbehaviorsNoAstar.GEBT_Mario.GEBT_MarioAgent"></arg>
+      <arg value="-if"></arg>
+      <arg value="bestIndividual_GEBT_MarioAgent_NoAstar.xml"></arg>
+      <arg value="-of"></arg>
+      <arg value="fitnessOutputAStar"></arg>
+    </java>
+  </target>
+  
+  <!-- ant runEvoAStar - Evolution with A* -->
+  <target name="runEvoAStar" depends="compile">
+    <java fork="true" classname="grammaticalbehaviors.GEBT_Mario.EvoMain">
+      <classpath>
+	      <path location="${out}"/>
+	      <path location="lib/jdom.jar"/>
+      </classpath>
+      <arg value="-ag"></arg>
+      <arg value="grammaticalbehaviors.GEBT_Mario.GEBT_MarioAgent"></arg>
+      <arg value="-if"></arg>
+      <arg value="bestIndividual_GEBT_MarioAgent.xml"></arg>
+      <arg value="-of"></arg>
+      <arg value="fitnessOutputAStar"></arg>
+    </java>
+  </target>
+  
+  <!-- ant runGamePlayNoAStar -Execution of agent with no A* -->
+  <target name="runGamePlayNoAStar" depends="compile">
+    <java fork="true" classname="ch.idsia.scenarios.champ.GamePlayEvaluation">
+      <classpath>
+	      <path location="${out}"/>
+	      <path location="lib/jdom.jar"/>
+      </classpath>
+      <arg value="-ag"></arg>
+      <arg value="grammaticalbehaviorsNoAstar.GEBT_Mario.GEBT_MarioAgent"></arg>
+    </java>
+  </target>
+
+  
+  <!-- ant runGamePlayAStar -Execution of agent with A* -->
+  <target name="runGamePlayAStar" depends="compile">
+    <java fork="true" classname="ch.idsia.scenarios.champ.GamePlayEvaluation">
+      <classpath>
+	      <path location="${out}"/>
+	      <path location="lib/jdom.jar"/>
+      </classpath>
+      <arg value="-ag"></arg>
+      <arg value="grammaticalbehaviors.GEBT_Mario.GEBT_MarioAgent"></arg>
+    </java>
+  </target>
+
+  <target name="clean">
+    <delete dir="${out}"/>
+  </target>
+</project>

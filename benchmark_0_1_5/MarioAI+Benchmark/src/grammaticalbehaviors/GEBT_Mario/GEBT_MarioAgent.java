@@ -132,12 +132,12 @@ public class GEBT_MarioAgent implements Agent
 
         reset();
 
-        String filename = "best-1-10-56926.8.xml";
+        //String filename = "best-1-10-56926.8.xml";
         
         //loadBehaviorTree("bestIndividual_GEBT_MarioAgent.xml");
         //loadBehaviorTree(filename);
         //loadBehaviorTree("pathFollower.xml");
-        System.out.println("Tried to load: " + filename);
+        //System.out.println("Tried to load: " + filename);
         
     }
 

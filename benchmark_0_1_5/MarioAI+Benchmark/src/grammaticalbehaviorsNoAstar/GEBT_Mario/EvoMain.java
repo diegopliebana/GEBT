@@ -161,13 +161,27 @@ public class EvoMain {
 
     public static void main(String[] args)
     {
+        String[] defaultArgs = new String[]{"-lt", "0 1",                       //Level types
+                            "-ld", "0 1 2 3 4 5 6 12 16 20",    //Level difficulties
+                            "-ll", "256",                       //Level length
+                            "-tl", "102",                       //Time limit (levelLength*4 / 10)
+                            "-ce", "0 1",                       //creatures enabled
+                            "-vis", "1",                        //Visualization
+                            "-fps", "60",                       //FPS
+                            "-rnd", "0",                        //Random Seed
+                };
+        //parse code args (the ones above).
+        parseArgs(defaultArgs);
 
-        String[] allArgs = new String[]{"-ag", "competition.cig.grammaticalbehaviorsNoAstar.GEBT_Mario.GEBT_MarioAgent"};
+        //parse execution / command line args
         parseArgs(args);
 
-        final CmdLineOptions cmdLineOptions = new CmdLineOptions(allArgs);
+        //Load the agent:
+        String[] agentArgs = new String[]{"-ag", "grammaticalbehaviorsNoAstar.GEBT_Mario.GEBT_MarioAgent"};
+        final CmdLineOptions cmdLineOptions = new CmdLineOptions(agentArgs);
         Agent agent = cmdLineOptions.getAgent();
         GEBT_MarioAgent myAgent = (GEBT_MarioAgent) agent;
+
 
         //Setting some things:
         cmdLineOptions.setVisualization(visualization);     //TO SET GRAPHICS OFF
