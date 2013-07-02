@@ -1,4 +1,6 @@
 *.class
 benchmark_0_1_5/MarioAI+Benchmark/fitness*.txt
 benchmark_0_1_5/MarioAI+Benchmark/out/*
+BTs/*.xml
+*.o
 
