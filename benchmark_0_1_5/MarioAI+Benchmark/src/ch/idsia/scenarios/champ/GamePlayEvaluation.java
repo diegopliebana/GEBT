@@ -57,7 +57,8 @@ public final class GamePlayEvaluation
 
         if(args[1].equalsIgnoreCase("grammaticalbehaviorsNoAstar.GEBT_Mario.GEBT_MarioAgent"))
         {
-            ((grammaticalbehaviorsNoAstar.GEBT_Mario.GEBT_MarioAgent)agent).loadBehaviorTree("bestIndividual_GEBT_MarioAgent_NoAstar.xml");
+            //((grammaticalbehaviorsNoAstar.GEBT_Mario.GEBT_MarioAgent)agent).loadBehaviorTree("bestIndividual_GEBT_MarioAgent_NoAstar.xml");
+            ((grammaticalbehaviorsNoAstar.GEBT_Mario.GEBT_MarioAgent)agent).loadBehaviorTree("RunRightSafe.xml");
 
         }else if(args[1].equalsIgnoreCase("grammaticalbehaviors.GEBT_Mario.GEBT_MarioAgent")){
             ((grammaticalbehaviors.GEBT_Mario.GEBT_MarioAgent)agent).loadBehaviorTree("bestIndividual_GEBT_MarioAgent.xml");
