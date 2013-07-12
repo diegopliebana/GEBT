@@ -9,14 +9,16 @@
 
 using namespace std;
 
+size_t gaSeed;
+
 double evaluate(const string &phenotype, const GEMap &mapper, const qGA &pop, const size_t &gen,
 	int parIndex, int argc, char **argv){
 	// If using gen argument as seed;
 	//size_t iSeed = gen;
 	//size_t fSeed = gen;
 	// If running on 5 cases;
-	size_t iSeed = 1;
-	size_t fSeed = 5;
+	size_t iSeed = gaSeed;
+	size_t fSeed = gaSeed + 4;
 	// 1) Write phenotype to file;
 	ofstream phenoFile;
 	stringstream pFile;
@@ -79,6 +81,7 @@ int main(int argc, char **argv){
 	// GA;
 	qGA pop;
 	pop.extractParams(argc, argv);
+	gaSeed = pop.getRandomSeed();
 	// Mapper;
 	GEMap mapper;
 	mapper.extractParams(argc, argv);

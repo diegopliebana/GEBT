@@ -1112,12 +1112,10 @@ bool qGA::doCrossover(const size_t ind1, const size_t ind2,
 	// Check sizes are correct;
 	if(at(ind1).genotype.size() > getMaxGenomeLength()
 		|| at(ind2).genotype.size() > getMaxGenomeLength()){
-		cout << "Size violated, reverting to parents.\n";
 		at(ind1) = safe1;
 		at(ind2) = safe2;
 		return false;
 	}
-	cout << "done XO, sizes are now " << at(ind1).genotype.size() << " and " << at(ind2).genotype.size() << "\n";
 	// Finally, effective size is destroyed if there were changes, set to max;
 	if(at(ind1).valid) at(ind1).effectiveSize = at(ind1).genotype.size();
 	if(at(ind2).valid) at(ind2).effectiveSize = at(ind2).genotype.size();

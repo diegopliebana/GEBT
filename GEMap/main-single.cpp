@@ -9,14 +9,16 @@
 
 using namespace std;
 
+size_t gaSeed;
+
 double evaluate(const string &phenotype, const GEMap &mapper, const qGA &pop, const size_t &gen,
 	int parIndex, int argc, char **argv){
 	// If using gen argument as seed;
 	//size_t iSeed = gen;
 	//size_t fSeed = gen;
 	// If running on 5 cases;
-	size_t iSeed = 1;
-	size_t fSeed = 1;
+	size_t iSeed = gaSeed;
+	size_t fSeed = gaSeed;
 	// 1) Write phenotype to file;
 	ofstream phenoFile;
 	stringstream pFile;
@@ -31,9 +33,9 @@ double evaluate(const string &phenotype, const GEMap &mapper, const qGA &pop, co
 		stringstream sysCall;
 		sysCall << "rm ../BTs/fitness-single-" << pop.getRandomSeed() << "-" << parIndex << ".txt ; "
 			<< "cd ../benchmark_0_1_5/MarioAI+Benchmark"
-			//<< " && java -classpath \"build/classes/\""
 			<< " && java -classpath \"out/production\""
 			<< " grammaticalbehaviors.GEBT_Mario.EvoMain"
+			//<< " grammaticalbehaviorsNoAstar.GEBT_Mario.EvoMain"
 			<< " -tl 100 -ld 0 1 2 3 4 -lt 0 1 -ll 320";
 			//<< " -tl 100 -ld 0 1 2 3 4 5 6 7 8 -lt 0 1 -ll 320";
 		if(argc != 3) sysCall
@@ -41,10 +43,11 @@ double evaluate(const string &phenotype, const GEMap &mapper, const qGA &pop, co
 		else sysCall
 			<< " -ce 1 -vis " << argv[1] << " -fps " << argv[2] << " -rnd " << seed;
 		sysCall
-			//<< " -if ../../BTs/phenotype-single-" << pop.getRandomSeed() << "-" << parIndex << ".xml"
-			<< " -if ./bestIndividual_GEBT_MarioAgent.xml"
+			<< " -if ../../BTs/phenotype-single-" << pop.getRandomSeed() << "-" << parIndex << ".xml"
+			//<< " -if ./bestIndividual_GEBT_MarioAgent.xml"
 			<< " -of ../../BTs/fitness-single-" << pop.getRandomSeed() << "-" << parIndex << ".txt"
 			<< " -os /dev/null >> /dev/null";
+		cout << sysCall.str() << "\n";
 		system(sysCall.str().c_str());
 		// 4) Recover fitness;
 		stringstream fFile;
@@ -60,6 +63,7 @@ double evaluate(const string &phenotype, const GEMap &mapper, const qGA &pop, co
 			fitness += atof(fitnessString.c_str());
 			fitFile.close();
 		}
+		cout << "fitness is " << fitness << "\n";
 	}
 	return fitness / (fSeed - iSeed + 1);
 }
@@ -81,6 +85,7 @@ int main(int argc, char **argv){
 	// GA;
 	qGA pop;
 	pop.extractParams(argc, argv);
+	gaSeed = pop.getRandomSeed();
 	// Mapper;
 	GEMap mapper;
 	mapper.extractParams(argc, argv);
