@@ -3,6 +3,7 @@
 #include<sstream>
 #include<ctime>
 #include<cfloat>
+#include<cstdlib>
 
 #include "qGA.h"
 #include "GEMap.h"
@@ -29,9 +30,10 @@ double evaluate(const string &phenotype, const GEMap &mapper, const qGA &pop, co
 	for(size_t seed = iSeed ; seed <= fSeed; ++seed){
 		// 3) System call Mario;
 		stringstream sysCall;
-		sysCall << "rm ../BTs/fitness-slide-" << pop.getRandomSeed() << "-" << parIndex << ".txt ; "
+		sysCall << "if [ -f ../BTs/fitness-slide-" << pop.getRandomSeed() << "-" << parIndex << ".txt ] ;"
+			<< " then rm ../BTs/fitness-slide-" << pop.getRandomSeed() << "-" << parIndex << ".txt ; fi; "
 			<< "cd ../benchmark_0_1_5/MarioAI+Benchmark"
-			<< " && java -classpath \"build/classes/\""
+			<< " && java -classpath \"out/production\""
 			<< " grammaticalbehaviors.GEBT_Mario.EvoMain"
 			<< " -tl 100 -ld 0 1 2 3 4 -lt 0 1 -ll 320";
 			//<< " -tl 100 -ld 0 1 2 3 4 5 6 7 8 -lt 0 1 -ll 320";

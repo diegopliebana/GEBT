@@ -13,6 +13,8 @@
 #include <algorithm>
 #include <cmath>
 #include <set>
+#include <unistd.h>
+#include <cstring>
 
 #include "qGA.h"
 
