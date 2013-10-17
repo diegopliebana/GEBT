@@ -122,7 +122,6 @@ int main(int argc, char **argv){
 		// OUTPUT STATS;
 		pop.outputStats(gen, gen);
 		// REEVALUATE PARENTS (if using different seeds);
-		/*
 		#pragma omp parallel for
 		for(int ind = 0; ind < pop.size(); ++ind){
 			string phenotype;
@@ -138,7 +137,6 @@ int main(int argc, char **argv){
 				pop[ind].fitness = 0;
 			}
 		}
-		*/
 		// GENERATE OFFSPRING;
 		qGA offspring;
 		pop.generateOffspring(offspring);

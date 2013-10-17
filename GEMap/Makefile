@@ -1,7 +1,7 @@
 #CC_FLAGS=${CC_FLAGS} -fopenmp
 #CC_FLAGS+=-fopenmp
 #CC_LIBS+=-lpthread
-all:	GE-five GE-slide GE-single GE-change
+all:	GE-five GE-slide GE-single GE-change GE-change5
 GE-five:	qGA.o GEMap.o main-five.o
 	g++ ${CC_FLAGS} -O2 -Wall -g -o $@ qGA.o GEMap.o main-five.o ${CC_LIBS} 
 
@@ -13,6 +13,9 @@ GE-single:	qGA.o GEMap.o main-single.o
 
 GE-change:	qGA.o GEMap.o main-change.o
 	g++ ${CC_FLAGS} -O2 -Wall -g -o $@ qGA.o GEMap.o main-change.o ${CC_LIBS} 
+
+GE-change5:	qGA.o GEMap.o main-change5.o
+	g++ ${CC_FLAGS} -O2 -Wall -g -o $@ qGA.o GEMap.o main-change5.o ${CC_LIBS} 
 
 qGA.o:	qGA.h qGA.cpp
 	g++ ${CC_FLAGS} -O2 -Wall -g -c qGA.cpp
@@ -31,4 +34,7 @@ main-single.o:	main-single.cpp GEMap.h qGA.h
 
 main-change.o:	main-change.cpp GEMap.h qGA.h
 	g++ ${CC_FLAGS} -O2 -Wall -g -c main-change.cpp
+
+main-change5.o:	main-change5.cpp GEMap.h qGA.h
+	g++ ${CC_FLAGS} -O2 -Wall -g -c main-change5.cpp
 
