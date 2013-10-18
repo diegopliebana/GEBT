@@ -19,11 +19,11 @@ double evaluate(const string &phenotype, const GEMap &mapper, const qGA &pop, co
 	//size_t fSeed = gen;
 	// If running on 5 cases;
 	size_t iSeed = gaSeed;
-	size_t fSeed = gaSeed;
+	size_t fSeed = gaSeed + 4;
 	// 1) Write phenotype to file;
 	ofstream phenoFile;
 	stringstream pFile;
-	pFile << "../BTs/phenotype-single-" << pop.getRandomSeed() << "-" << parIndex << ".xml";
+	pFile << "../BTs/phenotype-noAstar-five-" << pop.getRandomSeed() << "-" << parIndex << ".xml";
 	phenoFile.open(pFile.str().c_str());
 	phenoFile << phenotype << "\n";
 	phenoFile.close();
@@ -32,12 +32,11 @@ double evaluate(const string &phenotype, const GEMap &mapper, const qGA &pop, co
 	for(size_t seed = iSeed ; seed <= fSeed; ++seed){
 		// 3) System call Mario;
 		stringstream sysCall;
-		sysCall << "if [ -f ../BTs/fitness-single-" << pop.getRandomSeed() << "-" << parIndex << ".txt ] ;"
-			<< " then rm ../BTs/fitness-single-" << pop.getRandomSeed() << "-" << parIndex << ".txt ; fi; "
+		sysCall << "if [ -f ../BTs/fitness-noAstar-five-" << pop.getRandomSeed() << "-" << parIndex << ".txt ] ;"
+			<< " then rm ../BTs/fitness-noAstar-five-" << pop.getRandomSeed() << "-" << parIndex << ".txt ; fi; "
 			<< "cd ../benchmark_0_1_5/MarioAI+Benchmark"
 			<< " && java -classpath \"out/production\""
-			<< " grammaticalbehaviors.GEBT_Mario.EvoMain"
-			//<< " grammaticalbehaviorsNoAstar.GEBT_Mario.EvoMain"
+			<< " grammaticalbehaviorsNoAstar.GEBT_Mario.EvoMain"
 			<< " -tl 100 -ld 0 1 2 3 4 -lt 0 1 -ll 320";
 			//<< " -tl 100 -ld 0 1 2 3 4 5 6 7 8 -lt 0 1 -ll 320";
 		if(argc != 3) sysCall
@@ -45,15 +44,13 @@ double evaluate(const string &phenotype, const GEMap &mapper, const qGA &pop, co
 		else sysCall
 			<< " -ce 1 -vis " << argv[1] << " -fps " << argv[2] << " -rnd " << seed;
 		sysCall
-			<< " -if ../../BTs/phenotype-single-" << pop.getRandomSeed() << "-" << parIndex << ".xml"
-			//<< " -if ./bestIndividual_GEBT_MarioAgent.xml"
-			<< " -of ../../BTs/fitness-single-" << pop.getRandomSeed() << "-" << parIndex << ".txt"
+			<< " -if ../../BTs/phenotype-noAstar-five-" << pop.getRandomSeed() << "-" << parIndex << ".xml"
+			<< " -of ../../BTs/fitness-noAstar-five-" << pop.getRandomSeed() << "-" << parIndex << ".txt"
 			<< " -os /dev/null >> /dev/null";
-		cout << sysCall.str() << "\n";
 		system(sysCall.str().c_str());
 		// 4) Recover fitness;
 		stringstream fFile;
-		fFile << "../BTs/fitness-single-" << pop.getRandomSeed() << "-" << parIndex << ".txt";
+		fFile << "../BTs/fitness-noAstar-five-" << pop.getRandomSeed() << "-" << parIndex << ".txt";
 		ifstream fitFile(fFile.str().c_str(),ios::in);
 		if(!fitFile.is_open()){
 			cerr << "WARNING: Error recovering fitness file '"
@@ -65,7 +62,6 @@ double evaluate(const string &phenotype, const GEMap &mapper, const qGA &pop, co
 			fitness += atof(fitnessString.c_str());
 			fitFile.close();
 		}
-		cout << "fitness is " << fitness << "\n";
 	}
 	return fitness / (fSeed - iSeed + 1);
 }
@@ -177,7 +173,7 @@ int main(int argc, char **argv){
 		// Save it to BTs as well;
 		ofstream phenoFile;
 		stringstream bestPhenoFile;
-		bestPhenoFile << "../BTs/best-single-" << pop.getRandomSeed() << "-" <<
+		bestPhenoFile << "../BTs/best-noAstar-five-" << pop.getRandomSeed() << "-" <<
 			gen + 1 << "-" <<
 			pop[pop.getBestFitIndex()].fitness << ".xml";
 		phenoFile.open(bestPhenoFile.str().c_str());

@@ -7,4 +7,5 @@ RESULTS/*.dat
 RESULTS/*.txt
 *.o
 tempStats.txt
+.DS_Store
 

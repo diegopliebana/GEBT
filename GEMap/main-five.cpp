@@ -101,7 +101,6 @@ int main(int argc, char **argv){
 	///////////////////////////////////////////////////////////////////////
 	// Initialisation;
 	///////////////////////////////////////////////////////////////////////
-	//#pragma omp parallel for
 	for(size_t ind = 0; ind < pop.size(); ++ind){
 		string phenotype;
 		if ((pop[ind].valid = mapper.initGE(pop[ind].genotype, phenotype,
@@ -126,7 +125,6 @@ int main(int argc, char **argv){
 		pop.outputStats(gen, gen);
 		// REEVALUATE PARENTS (if using different seeds);
 		/*
-		#pragma omp parallel for
 		for(int ind = 0; ind < pop.size(); ++ind){
 			string phenotype;
 			if((pop[ind].valid = mapper.mapGE(pop[ind].genotype, phenotype,
@@ -146,7 +144,6 @@ int main(int argc, char **argv){
 		qGA offspring;
 		pop.generateOffspring(offspring);
 		// EVALUATE OFFSPRING;
-		//#pragma omp parallel for
 		for(size_t ind = 0; ind < offspring.size(); ++ind){
 			string phenotype;
 			if (!offspring[ind].valid && (offspring[ind].valid =
