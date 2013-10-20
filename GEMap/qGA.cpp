@@ -157,6 +157,7 @@ void qGA::extractParams(int &argc, char **argv, bool modifyArgv){
 	vector<char*> newargv;	// New argc and argv to return, with extracted options;
 	char opt;
 	while(optind < argc){
+		int prevoptind = optind;
 		opt = getopt(argc, argv, QGA_PARAMSSTRING);
 		switch(opt){
 			case 'p': setPopSize(atoi(optarg));
@@ -207,7 +208,15 @@ void qGA::extractParams(int &argc, char **argv, bool modifyArgv){
 				break;
 			case 'S': setRandomSeed(atoi(optarg));
 				break;
-			default:if(modifyArgv) newargv.push_back(argv[optind - 1]);
+			default:cout << "default, prevoptind = " << prevoptind << "; optind = " << optind << "; opt = " << opt << "\n";
+				cout << "optarg = " << optarg << "\n";
+				cout << "argc = " << argc << "\n";
+				cout << "optopt = " << optopt << "\n";
+				cout << "optopt = " << (char)optopt << "\n";
+				if(prevoptind == optind) optind++;
+				if(modifyArgv) newargv.push_back(argv[optind - 1]);
+				cout << "pushed back " << argv[optind - 1] << "\n";
+				
 		}
 		optopt = 0; // Reset marker of last unknown "valid" argument;
 	}
