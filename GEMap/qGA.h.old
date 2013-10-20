@@ -46,7 +46,7 @@ struct qGAIndividual{
 	map<string, double> extra;
 };
 
-#define QGA_PARAMSSTRING		"-p:g:s:t:f:x:w:i:a:o:r:e:m:E:M:n:X:H:h:I:c:l:F:S:"
+#define QGA_PARAMSSTRING		"p:g:s:t:f:x:w:i:a:o:r:e:m:E:M:n:X:H:h:I:c:l:F:S:"
 #define QGA_DEFAULT_POP			10
 #define QGA_DEFAULT_GENS		10
 #define QGA_DEFAULT_SELECTOR		QGA_TOURNAMENT

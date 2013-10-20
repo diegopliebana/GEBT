@@ -130,7 +130,6 @@ bool qGA::paramClash(const string &otherParamsString){
 	string myParamsString = QGA_PARAMSSTRING;
 	for(size_t ii = 0; ii < myParamsString.size(); ++ii){
 		for(size_t jj = 0; jj < otherParamsString.size(); ++jj){
-			if(myParamsString[ii] == '-') continue;
 			if(myParamsString[ii] == ':') continue;
 			if(myParamsString[ii] == otherParamsString[jj]) return true;
 		}
@@ -207,7 +206,17 @@ void qGA::extractParams(int &argc, char **argv, bool modifyArgv){
 				break;
 			case 'S': setRandomSeed(atoi(optarg));
 				break;
-			default:if(modifyArgv) newargv.push_back(argv[optind - 1]);
+			default: if(optopt != 0){
+					// Unknown option (such as '-x'); add to newargv;
+					if(modifyArgv)
+						newargv.push_back(argv[optind - 1]);
+				}
+				else if(optind < argc){
+					// Unknown argument (such as '1'); add to newargv;
+					if(modifyArgv)
+						newargv.push_back(argv[optind]);
+					optind++;
+				}
 		}
 		optopt = 0; // Reset marker of last unknown "valid" argument;
 	}

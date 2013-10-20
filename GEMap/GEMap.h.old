@@ -36,7 +36,7 @@ struct geMapHash{
 	size_t maxRepeat;
 };
 
-#define GEMAP_PARAMSSTRING		"-G:W:N:z:Z:d:D:T:"
+#define GEMAP_PARAMSSTRING		"G:W:N:z:Z:d:D:T:"
 #define GEMAP_DEFAULT_GRAMMAR		"grammar.bnf"
 #define GEMAP_DEFAULT_MAXWRAP		0
 #define GEMAP_DEFAULT_INITIALISER	GEMAP_SI
