@@ -3,7 +3,7 @@ package wox.serial;
 /**
  * This class provides methods to encode and decode byte arrays to
  * and from base64 encoding.
- * @author Carlos Roberto Jaimez González
+ * @author Carlos Roberto Jaimez Gonzalez
  * Created: 10th January 2005
  * @version 1.0
  * Acknowledgements: some of the code was taken from the web site
@@ -83,7 +83,7 @@ public class EncodeBase64 {
    * This method encodes an array of bytes to Base64.
    * @param source: byte[] the original array of bytes to be converted
    * @return byte[] the encoded array of bytes
-   * Author: Carlos Roberto Jaimez González
+   * Author: Carlos Roberto Jaimez Gonzalez
    * Email: crjaim@essex.ac.uk
    * Created: 10th January 2005
    */
@@ -180,7 +180,7 @@ public class EncodeBase64 {
    * @param numBytes int - the number of bytes to be taken from the source array
    * @param target byte[] - the array of bytes to be written
    * @param targetOff int - the position in the target array
-   * Author: Carlos Roberto Jaimez González
+   * Author: Carlos Roberto Jaimez Gonzalez
    * Email: crjaim@essex.ac.uk
    * Created: 10th January 2005
    */
@@ -355,7 +355,7 @@ public class EncodeBase64 {
    * @param target byte[] - the array of bytes to be written
    * @param targetOff int - the position in the target array
    * @return int - the number of decoded bytes written in the target array
-   * Author: Carlos Roberto Jaimez González
+   * Author: Carlos Roberto Jaimez Gonzalez
    * Email: crjaim@essex.ac.uk
    * Created: 11th January 2005
    */
@@ -453,9 +453,9 @@ public class EncodeBase64 {
                                  (byte)'g', (byte)'q', (byte)'v', (byte)'g', (byte)'@', (byte)'!', (byte)'+', (byte)'y',
                                  (byte)'h', (byte)'#', (byte)'c', (byte)'u', (byte)'j', (byte)'"', (byte)'p', (byte)'t',
                                  (byte)'8', (byte)'e', (byte)'d', (byte)'i', (byte)'.', (byte)'$', (byte)'l', (byte)'f',
-                                 (byte)'i', (byte)'g', (byte)'t', (byte)'o', (byte)'¡', (byte)'%', (byte)'o', (byte)'8',
-                                 (byte)'?', (byte)'6', (byte)'6', (byte)'=', (byte)'¿', (byte)'&', (byte)'o', (byte)'0',
-                                 (byte)'o', (byte)'8', (byte)'7', (byte)'?', (byte)')', (byte)'(', (byte)'j', (byte)'ñ',
+                                 (byte)'i', (byte)'g', (byte)'t', (byte)'o', (byte)' ', (byte)'%', (byte)'o', (byte)'8',
+                                 (byte)'?', (byte)'6', (byte)'6', (byte)'=', (byte)' ', (byte)'&', (byte)'o', (byte)'0',
+                                 (byte)'o', (byte)'8', (byte)'7', (byte)'?', (byte)')', (byte)'(', (byte)'j', (byte)' ',
                                  (byte)'a', (byte)'h', (byte)',', (byte)'q', (byte)'Q', (byte)'Y', (byte)')', (byte)'[',
                                  (byte)'d', (byte)'7', (byte)',', (byte)'w', (byte)'F', (byte)'7', (byte)'0', (byte)']',
                                  (byte)'5', (byte)'/', (byte)'n', (byte)'e', (byte)'H', (byte)'0', (byte)'{', (byte)'*',
@@ -463,9 +463,9 @@ public class EncodeBase64 {
                                  (byte)'g', (byte)'q', (byte)'v', (byte)'g', (byte)'@', (byte)'!', (byte)'+', (byte)'y',
                                  (byte)'h', (byte)'#', (byte)'c', (byte)'u', (byte)'j', (byte)'"', (byte)'p', (byte)'t',
                                  (byte)'8', (byte)'e', (byte)'d', (byte)'i', (byte)'.', (byte)'$', (byte)'l', (byte)'f',
-                                 (byte)'i', (byte)'g', (byte)'t', (byte)'o', (byte)'¡', (byte)'%', (byte)'o', (byte)'8',
-                                 (byte)'?', (byte)'6', (byte)'6', (byte)'=', (byte)'¿', (byte)'&', (byte)'o', (byte)'0',
-                                 (byte)'o', (byte)'8', (byte)'7', (byte)'?', (byte)')', (byte)'(', (byte)'j', (byte)'ñ', (byte)'m'
+                                 (byte)'i', (byte)'g', (byte)'t', (byte)'o', (byte)' ', (byte)'%', (byte)'o', (byte)'8',
+                                 (byte)'?', (byte)'6', (byte)'6', (byte)'=', (byte)' ', (byte)'&', (byte)'o', (byte)'0',
+                                 (byte)'o', (byte)'8', (byte)'7', (byte)'?', (byte)')', (byte)'(', (byte)'j', (byte)' ', (byte)'m'
                                  };
     //original = new byte[]{(byte)'a',(byte)'b',(byte)'c'};
 
