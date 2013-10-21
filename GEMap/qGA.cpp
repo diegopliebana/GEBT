@@ -208,14 +208,8 @@ void qGA::extractParams(int &argc, char **argv, bool modifyArgv){
 				break;
 			case 'S': setRandomSeed(atoi(optarg));
 				break;
-			default:cout << "default, prevoptind = " << prevoptind << "; optind = " << optind << "; opt = " << opt << "\n";
-				cout << "optarg = " << optarg << "\n";
-				cout << "argc = " << argc << "\n";
-				cout << "optopt = " << optopt << "\n";
-				cout << "optopt = " << (char)optopt << "\n";
-				if(prevoptind == optind) optind++;
+			default:if(prevoptind == optind) optind++;
 				if(modifyArgv) newargv.push_back(argv[optind - 1]);
-				cout << "pushed back " << argv[optind - 1] << "\n";
 				
 		}
 		optopt = 0; // Reset marker of last unknown "valid" argument;
