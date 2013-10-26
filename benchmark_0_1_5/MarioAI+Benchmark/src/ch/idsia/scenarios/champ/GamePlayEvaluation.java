@@ -40,10 +40,10 @@ public final class GamePlayEvaluation
         final int[] levelDifficulties = new int[]{0, 1, 2, 3, 4, 5, 6, 12, 16, 20};
         final int[] levelTypes = new int[]{0, /*1, 2*/};
         final int[] levelLengths = new int[]{320/*, 320, 320, 320, 320, 320*/};
-        final boolean[] creaturesEnables = new boolean[]{false};
+        final boolean[] creaturesEnables = new boolean[]{true};
         int levelSeed = cmdLineOptions.getLevelRandSeed();
 //        cmdLineOptions.setVisualization(false);
-        cmdLineOptions.setFPS(60);  //100
+        cmdLineOptions.setFPS(80);  //100
         //cmdLineOptions.setLevelRandSeed(6189642);
         cmdLineOptions.setLevelRandSeed(0);
 
