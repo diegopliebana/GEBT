@@ -86,7 +86,7 @@
           <file leaf-file-name="EvoMain.java" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviors/GEBT_Mario/EvoMain.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="402" column="118" selection-start="13924" selection-end="13924" vertical-scroll-proportion="0.475">
+                <state line="184" column="58" selection-start="5817" selection-end="5817" vertical-scroll-proportion="0.48235294">
                   <folding />
                 </state>
               </provider>
@@ -99,7 +99,7 @@
           <file leaf-file-name="EvoMain.java" pinned="false" current="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/GEBT_Mario/EvoMain.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="399" column="25" selection-start="13894" selection-end="13894" vertical-scroll-proportion="0.55">
+                <state line="179" column="9" selection-start="5760" selection-end="5760" vertical-scroll-proportion="0.68235296">
                   <folding />
                 </state>
               </provider>
@@ -662,14 +662,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviorsNoAstar/GEBT_Mario/EvoMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="399" column="25" selection-start="13894" selection-end="13894" vertical-scroll-proportion="0.55">
+        <state line="179" column="9" selection-start="5760" selection-end="5760" vertical-scroll-proportion="0.68235296">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/grammaticalbehaviors/GEBT_Mario/EvoMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="402" column="118" selection-start="13924" selection-end="13924" vertical-scroll-proportion="0.475">
+        <state line="184" column="58" selection-start="5817" selection-end="5817" vertical-scroll-proportion="0.48235294">
           <folding />
         </state>
       </provider>

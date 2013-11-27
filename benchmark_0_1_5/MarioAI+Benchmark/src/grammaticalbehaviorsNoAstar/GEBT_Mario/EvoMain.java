@@ -174,6 +174,10 @@ public class EvoMain {
         {
             outputFile = values[0];
         }
+        else if(parameter.compareToIgnoreCase("-os") == 0)
+        {
+            statsFile = values[0];
+        }
 
     }
 
