@@ -7,6 +7,7 @@ package grammaticalbehaviorsNoAstar.GEBT_Mario;
 
 import ch.idsia.ai.agents.Agent;
 import ch.idsia.maibe.tasks.BasicTask;
+import ch.idsia.mario.engine.sprites.Mario;
 import ch.idsia.tools.CmdLineOptions;
 import ch.idsia.tools.EvaluationInfo;
 import java.io.BufferedWriter;
@@ -19,6 +20,7 @@ import java.io.PrintWriter;
  */
 public class EvoMain {
 
+    //GE Evaluation
     private static int[]       timeLimits;
     private static int[]       levelDifficulties;
     private static int[]       levelTypes;
@@ -29,7 +31,79 @@ public class EvoMain {
     private static int         fps;
     private static String      inputFile;
     private static String      outputFile;
+    private static String      statsFile;
 
+    //Eval info
+    private float m_totalFitness;
+    private float m_totalCellsPassed;
+    private float m_avgCellsPassed;
+    private float m_totalItemsCollected; //mushrooms, flowers and coins.
+    private float m_avgItemsCollected;
+    private float m_totalKillsByFire;
+    private float m_avgKillsByFire;
+    private float m_totalKillsByShell;
+    private float m_avgKillsByShell;
+    private float m_totalKillsByStomp;
+    private float m_avgKillsByStomp;
+    private float m_totalKills; //any type
+    private float m_avgKills;
+    private float m_totalTimeSpent;
+    private float m_avgTimeSpent;
+    private float m_totalTimeLeft;
+    private float m_avgTimeLeft;
+    private float m_totalLevelsEnded;
+    private float m_avgLevelsEnded;
+
+    private void initEvalInfo()
+    {
+        m_totalFitness = 0.0f;
+        m_totalCellsPassed = 0.0f;
+        m_avgCellsPassed = 0.0f;
+        m_totalItemsCollected = 0.0f;
+        m_avgItemsCollected = 0.0f;
+        m_totalKillsByFire = 0.0f;
+        m_avgKillsByFire = 0.0f;
+        m_totalKillsByShell = 0.0f;
+        m_avgKillsByShell = 0.0f;
+        m_totalKillsByStomp = 0.0f;
+        m_avgKillsByStomp = 0.0f;
+        m_totalKills = 0.0f;
+        m_avgKills = 0.0f;
+        m_totalTimeSpent = 0.0f;
+        m_avgTimeSpent = 0.0f;
+        m_totalTimeLeft = 0.0f;
+        m_avgTimeLeft = 0.0f;
+        m_totalLevelsEnded = 0.0f;
+        m_avgLevelsEnded = 0.0f;
+    }
+
+    private void computeEvalInfo(EvaluationInfo a_evalInfo)
+    {
+        m_totalCellsPassed += a_evalInfo.distancePassedCells;
+        m_totalItemsCollected += (a_evalInfo.flowersDevoured +
+                a_evalInfo.mushroomsDevoured /*+ a_evalInfo.coinsGained*/);
+        m_totalKillsByFire += a_evalInfo.killsByFire;
+        m_totalKillsByShell += a_evalInfo.killsByShell;
+        m_totalKillsByStomp += a_evalInfo.killsByStomp;
+        m_totalKills += a_evalInfo.killsTotal;
+        m_totalTimeSpent += a_evalInfo.timeSpent;
+        m_totalTimeLeft += a_evalInfo.timeLeft;
+        m_totalLevelsEnded += (a_evalInfo.marioStatus == Mario.STATUS_WIN) ? 1 : 0;
+    }
+
+    private void endEvalInfo(float a_fitness, int a_numPlays)
+    {
+        m_totalFitness = a_fitness;
+        m_avgCellsPassed = m_totalCellsPassed / a_numPlays;
+        m_avgItemsCollected = m_totalItemsCollected / a_numPlays;
+        m_avgKillsByFire = m_totalKillsByFire / a_numPlays;
+        m_avgKillsByShell = m_totalKillsByShell / a_numPlays;
+        m_avgKillsByStomp = m_totalKillsByStomp / a_numPlays;
+        m_avgKills = m_totalKills / a_numPlays;
+        m_avgTimeSpent = m_totalTimeSpent / a_numPlays;
+        m_avgTimeLeft = m_totalTimeLeft / a_numPlays;
+        m_avgLevelsEnded = m_totalLevelsEnded / a_numPlays;
+    }
 
     private static int[] toIntArray(String []array)
     {
@@ -157,6 +231,62 @@ public class EvoMain {
             e.printStackTrace();
         }
     }
+    private void printStatsToFile()
+    {
+        try
+        {
+            PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(statsFile)));
+
+            out.print("Total fitness,");
+            out.print("Total levels ended,");
+            out.print("Avg.levels ended,");
+            out.print("Total cells passed,");
+            out.print("Avg. cells passed,");
+            out.print("Total time spent,");
+            out.print("Avg. time spent,");
+            out.print("Total time left,");
+            out.print("Avg. time left,");
+            out.print("Total kills,");
+            out.print("Avg. kills,");
+            out.print("Total items collected,");
+            out.print("Avg. itmes collected,");
+            out.print("Total kills by fire,");
+            out.print("Avg. kills by fire,");
+            out.print("Total kills by shell,");
+            out.print("Avg. kills by shell,");
+            out.print("Total kills by stomp,");
+            out.print("Avg. kills by stomp");
+
+            out.println();
+
+            out.print(m_totalFitness + ",");
+            out.print(m_totalLevelsEnded + ",");
+            out.print(m_avgLevelsEnded + ",");
+            out.print(m_totalCellsPassed + ",");
+            out.print(m_avgCellsPassed + ",");
+            out.print(m_totalTimeSpent + ",");
+            out.print(m_avgTimeSpent + ",");
+            out.print(m_totalTimeLeft + ",");
+            out.print(m_avgTimeLeft + ",");
+            out.print(m_totalKills + ",");
+            out.print(m_avgKills + ",");
+            out.print(m_totalItemsCollected + ",");
+            out.print(m_avgItemsCollected + ",");
+            out.print(m_totalKillsByFire + ",");
+            out.print(m_avgKillsByFire + ",");
+            out.print(m_totalKillsByShell + ",");
+            out.print(m_avgKillsByShell + ",");
+            out.print(m_totalKillsByStomp + ",");
+            out.print(m_avgKillsByStomp);
+
+            out.close();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
 
 
     public static void main(String[] args)
@@ -195,16 +325,19 @@ public class EvoMain {
         cmdLineOptions.setAgent(myAgent);
 
         //Score!
-        double fitness = score(cmdLineOptions,timeLimits,levelDifficulties,
-                              levelTypes,levelLengths,creaturesEnabled);
+        EvoMain evoM = new EvoMain();
+        double fitness = evoM.score(cmdLineOptions,timeLimits,levelDifficulties,
+                levelTypes,levelLengths,creaturesEnabled);
 
-	//double realFitness =  100000.0 / (1.0 + fitness);
+        //double realFitness =  100000.0 / (1.0 + fitness);
 
-        printFitnessToFile(fitness);
+        evoM.printFitnessToFile(fitness);
+
+        evoM.printStatsToFile();
     }
 
 
-    private static float score(CmdLineOptions cmdLineOptions,int[] timeLimits,int[] levelDifficulties,
+    private float score(CmdLineOptions cmdLineOptions,int[] timeLimits,int[] levelDifficulties,
                               int[] levelTypes,int[] levelLengths,boolean[] creaturesEnables)
     {
     
@@ -216,7 +349,10 @@ public class EvoMain {
         int trials = 0;
         int disqualifications = 0;
         //----------------------------------------------------------------------
-        
+
+        //init our stats
+        initEvalInfo();
+
         // todo: include level lengths.
 
         for (int ll : levelLengths)
@@ -251,6 +387,8 @@ public class EvoMain {
                             System.out.println("Intermediate SCORE = " + f + "; Details: " + evaluationInfo.toStringSingleLine());
                         }
                         fitness += f;
+
+                        computeEvalInfo(evaluationInfo);
                     }
                 }
             }
@@ -260,6 +398,7 @@ public class EvoMain {
         System.out.println("disqualifications = " + disqualifications);
         System.out.println("GamePlayEvaluation final score = " + fitness);
 
+        endEvalInfo(fitness, trials);
     
 //        EvaluationInfo evaluationInfo = new EvaluationInfo(environment.getEvaluationInfoAsFloats());
 //        System.out.println("evaluationInfo = " + evaluationInfo);
