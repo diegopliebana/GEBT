@@ -15,9 +15,10 @@ echo -e "1\t125000\t`cat stats-pathFollower-Astar.dat | cut -f 3-5`" >> stats-pa
 ############ SLIDE #
 ####################
 # Generalisation test every 5000 evaluations
-for gen in 2 4 6 7 9 11 12 14 16 17 19 21 22 24 26 27 29 31 32 34 36 37 39 41 42; do
-	./marioTestAstar.py ../BTs/best-slide-*-$gen-*.xml 0 100 20
-done;
+#for gen in 2 4 6 7 9 11 12 14 16 17 19 21 22 24 26 27 29 31 32 34 36 37 39 41 42; do
+#	./marioTestAstar.py ../BTs/best-slide-*-$gen-*.xml 0 100 20
+#done;
+
 for ((run=1; run<=$NBRRUNS; run=$run+1)) ; do
 	bts=""
 	for gen in 2 4 6 7 9 11 12 14 16 17 19 21 22 24 26 27 29 31 32 34 36 37 39 41 42; do
@@ -33,9 +34,9 @@ done;
 ########### CHANGE5 #
 #####################
 # Generalisation test every 5000 evaluations
-for gen in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25; do
-	./marioTestAstar.py ../BTs/best-change5-*-$gen-*.xml 0 100 20
-done;
+#for gen in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25; do
+#	./marioTestAstar.py ../BTs/best-change5-*-$gen-*.xml 0 100 20
+#done;
 
 for ((run=1; run<=$NBRRUNS; run=$run+1)) ; do
 	bts=""
@@ -47,8 +48,6 @@ for ((run=1; run<=$NBRRUNS; run=$run+1)) ; do
 	rm newstatsfile.dat
 done;
 ~/Documents/WORK/bds/Statify/statify 100000000 max change5-Astar stats-change5-Astar-*
-
-exit;
 
 ####################
 ############# FIVE #

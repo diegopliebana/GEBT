@@ -6,34 +6,28 @@ NBRRUNS=8
 ##### PATHFOLLOWER #
 ####################
 # Generalisation test for noAstar alone
-echo "== 1 =="
-./marioTestnoAstar.py ../benchmark_0_1_5/MarioAI+Benchmark/RunRightSafe.xml 0 100 20
-echo "== 2 =="
-./createStatifiableBasedOnCVSField.py 0 stats-RunRightSafe-noAstar.dat ../benchmark_0_1_5/MarioAI+Benchmark/RunRightSafe.xml.txt
-echo "== 3 =="
-echo -e "1\t125000\t`cat stats-RunRightSafe-noAstar.dat | cut -f 3-5`" >> stats-RunRightSafe-noAstar.dat
-~/Documents/WORK/bds/Statify/statify 100000000 max RunRightSafe-noAstar stats-RunRightSafe-noAstar.dat
-echo "== 4 =="
-
-exit;
+#./marioTestnoAstar.py ../benchmark_0_1_5/MarioAI+Benchmark/RunRightSafe.xml 0 100 20
+#./createStatifiableBasedOnCVSField.py 0 stats-RunRightSafe-noAstar.dat ../benchmark_0_1_5/MarioAI+Benchmark/RunRightSafe.xml.txt
+#echo -e "1\t125000\t`cat stats-RunRightSafe-noAstar.dat | cut -f 3-5`" >> stats-RunRightSafe-noAstar.dat
+#~/Documents/WORK/bds/Statify/statify 100000000 max RunRightSafe-noAstar stats-RunRightSafe-noAstar.dat
 
 ####################
 ############ SLIDE #
 ####################
 # Generalisation test every 5000 evaluations
-for gen in 2 4 6 7 9 11 12 14 16 17 19 21 22 24 26 27 29 31 32 34 36 37 39 41 42; do
-	./marioTestnoAstar.py ../BTs/best-noAstar-slide-*-$gen-*.xml 0 100 20
-done;
-for ((run=1; run<=$NBRRUNS; run=$run+1)) ; do
-	bts=""
-	for gen in 2 4 6 7 9 11 12 14 16 17 19 21 22 24 26 27 29 31 32 34 36 37 39 41 42; do
-		bts="$bts ../BTs/best-noAstar-slide-$run-$gen-*.txt"
-	done;
-	./createStatifiableBasedOnCVSField.py 0 newstatsfile.dat $bts
-	./convert.py newstatsfile.dat 1.68 5000 > stats-slide-noAstar-$run.dat
-	rm newstatsfile.dat
-done;
-~/Documents/WORK/bds/Statify/statify 100000000 max slide-noAstar stats-slide-noAstar-*
+#for gen in 2 4 6 7 9 11 12 14 16 17 19 21 22 24 26 27 29 31 32 34 36 37 39 41 42; do
+#	./marioTestnoAstar.py ../BTs/best-noAstar-slide-*-$gen-*.xml 0 100 20
+#done;
+#for ((run=1; run<=$NBRRUNS; run=$run+1)) ; do
+#	bts=""
+#	for gen in 2 4 6 7 9 11 12 14 16 17 19 21 22 24 26 27 29 31 32 34 36 37 39 41 42; do
+#		bts="$bts ../BTs/best-noAstar-slide-$run-$gen-*.txt"
+#	done;
+#	./createStatifiableBasedOnCVSField.py 0 newstatsfile.dat $bts
+#	./convert.py newstatsfile.dat 1.68 5000 > stats-slide-noAstar-$run.dat
+#	rm newstatsfile.dat
+#done;
+#~/Documents/WORK/bds/Statify/statify 100000000 max slide-noAstar stats-slide-noAstar-*
 
 #####################
 ########### CHANGE5 #

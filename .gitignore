@@ -6,6 +6,7 @@ BTs/*.txt
 RESULTS/*.dat
 RESULTS/*.txt
 RESULTS/noAstar*
+RESULTS/Astar*
 DIEGORESULTS
 *.o
 tempStats.txt
