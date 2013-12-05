@@ -60,7 +60,16 @@ double evaluate(const string &phenotype, const GEMap &mapper, const qGA &pop, co
 			fitness += atof(fitnessString.c_str());
 			fitFile.close();
 		}
+		// Remove fitness file;
+		sysCall.str("");
+		sysCall.clear();
+		sysCall << "rm " << fFile.str();
+		system(sysCall.str().c_str());
 	}
+	// Remove phenotype file;
+	stringstream sysCall;
+	sysCall << "rm " << pFile.str();
+	system(sysCall.str().c_str());
 	return fitness / (fSeed - iSeed + 1);
 }
 

@@ -5,6 +5,9 @@ BTs/*.xml
 BTs/*.txt
 RESULTS/*.dat
 RESULTS/*.txt
+RESULTS/noAstar*
+RESULTS/Astar*
+DIEGORESULTS
 *.o
 tempStats.txt
 .DS_Store
