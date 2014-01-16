@@ -49,7 +49,6 @@ double evaluate(const string &phenotype, const GEMap &mapper, const qGA &pop, co
 			//<< " -if ./bestIndividual_GEBT_MarioAgent.xml"
 			<< " -of ../../BTs/fitness-noAstar-single-" << pop.getRandomSeed() << "-" << parIndex << ".txt"
 			<< " -os /dev/null >> /dev/null";
-		cout << sysCall.str() << "\n";
 		system(sysCall.str().c_str());
 		// 4) Recover fitness;
 		stringstream fFile;
